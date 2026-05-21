@@ -126,7 +126,6 @@ input,select,textarea{font-family:var(--font-body);}
 .content{padding:16px 14px;flex:1;position:relative;z-index:1;}
 .panel{display:none;}
 .panel.active{display:block;}
-#panel-chat.active{display:flex;flex-direction:column;}
 
 /* ── SECTION TITLE ── */
 .section-title{font-family:var(--font-head);color:var(--text);font-size:20px;font-weight:800;margin-bottom:18px;letter-spacing:-.5px;}
@@ -243,35 +242,6 @@ input,select,textarea{font-family:var(--font-body);}
 .pay-bar-fill{background:linear-gradient(90deg,var(--blue),#6fb8ff);border-radius:4px;height:5px;transition:width .8s;}
 .pay-amt{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--text2);}
 
-/* ── CHAT ── */
-.chat-wrap{display:flex;flex-direction:column;height:calc(100vh - 220px);min-height:380px;}
-.chat-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
-.chat-hdr-title{font-family:var(--font-head);font-size:16px;color:var(--text);font-weight:800;}
-.clear-btn{background:transparent;border:1px solid var(--border2);border-radius:8px;padding:5px 11px;color:var(--text3);font-size:11px;font-weight:600;transition:all .2s;}
-.clear-btn:hover{color:var(--text);}
-.ai-err{background:var(--red-bg);border:1px solid rgba(240,92,110,.3);border-radius:var(--radius-sm);padding:10px 14px;color:var(--red);font-size:13px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px;}
-.ai-err-close{background:transparent;border:none;color:var(--red);font-size:18px;line-height:1;}
-.chat-msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding-bottom:8px;}
-.msg-row{display:flex;align-items:flex-end;gap:8px;animation:fadeIn .25s;}
-.msg-row.user{justify-content:flex-end;}
-.bot-av{font-size:18px;flex-shrink:0;background:var(--surface2);border:1px solid var(--border);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;}
-.user-bub{background:linear-gradient(135deg,#4a9eff,#2d7dd6);border-radius:16px 16px 4px 16px;padding:10px 14px;max-width:80%;}
-.bot-bub{background:var(--surface2);border:1px solid var(--border);border-radius:16px 16px 16px 4px;padding:10px 14px;max-width:82%;}
-.msg-meta{font-size:10px;color:rgba(255,255,255,.5);margin-bottom:3px;font-weight:700;}
-.msg-txt{font-size:13px;color:var(--text);line-height:1.6;white-space:pre-wrap;word-break:break-word;}
-.user-bub .msg-txt{color:#fff;}
-.typing-dots{display:flex;gap:5px;padding:3px 0;}
-.typing-dots span{color:var(--text3);animation:pulse 1.3s ease-in-out infinite;}
-.typing-dots span:nth-child(2){animation-delay:.15s;}
-.typing-dots span:nth-child(3){animation-delay:.3s;}
-.chat-inp-row{display:flex;gap:8px;margin-top:10px;}
-.chat-inp{flex:1;background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius-sm);padding:12px 14px;color:var(--text);font-size:14px;outline:none;transition:border-color .2s;}
-.chat-inp:focus{border-color:rgba(74,158,255,.4);}
-.send-btn{background:linear-gradient(135deg,#4a9eff,#2d7dd6);border:none;border-radius:var(--radius-sm);padding:12px 18px;color:#fff;font-size:16px;transition:opacity .2s;}
-.send-btn:disabled{opacity:.4;cursor:not-allowed;}
-.suggestions{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
-.sugg-btn{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:6px 12px;color:var(--text3);font-size:11px;font-weight:600;transition:all .2s;white-space:nowrap;}
-.sugg-btn:hover{color:var(--text);border-color:var(--border2);}
 
 /* ── MODAL ── */
 #modal-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:flex-end;justify-content:center;}
@@ -362,7 +332,6 @@ input,select,textarea{font-family:var(--font-body);}
     <button class="tab-btn" id="tab-add"     onclick="switchTab('add')"    ><span class="tab-icon">➕</span><span class="tab-label">Novo</span></button>
     <button class="tab-btn" id="tab-history" onclick="switchTab('history')"><span class="tab-icon">📋</span><span class="tab-label">Histórico</span></button>
     <button class="tab-btn" id="tab-summary" onclick="switchTab('summary')"><span class="tab-icon">📊</span><span class="tab-label">Resumo</span></button>
-    <button class="tab-btn" id="tab-chat"    onclick="switchTab('chat')"   ><span class="tab-icon">🤖</span><span class="tab-label">IA</span></button>
   </div>
 
   <div class="content">
@@ -383,31 +352,6 @@ input,select,textarea{font-family:var(--font-body);}
       <div class="section-title">Resumo</div>
       <div id="summary-content"></div>
     </div>
-    <!-- CHAT -->
-    <div class="panel" id="panel-chat">
-      <div class="chat-wrap">
-        <div class="chat-hdr">
-          <span class="chat-hdr-title">🤖 Assistente IA</span>
-          <button class="clear-btn" onclick="clearChat()">Limpar chat</button>
-        </div>
-        <div id="ai-err" style="display:none;" class="ai-err">
-          <span id="ai-err-txt"></span>
-          <button class="ai-err-close" onclick="document.getElementById('ai-err').style.display='none'">✕</button>
-        </div>
-        <div class="chat-msgs" id="chat-msgs"></div>
-        <div class="chat-inp-row">
-          <input class="chat-inp" id="chat-inp" placeholder="Pergunte sobre suas finanças…"
-            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMsg();}"/>
-          <button class="send-btn" id="send-btn" onclick="sendMsg()">➤</button>
-        </div>
-        <div class="suggestions">
-          <button class="sugg-btn" onclick="setQ('Qual o saldo do mês atual?')">💰 Saldo</button>
-          <button class="sugg-btn" onclick="setQ('Quem gastou mais esse mês?')">👫 Quem mais gastou?</button>
-          <button class="sugg-btn" onclick="setQ('Quais são minhas top categorias de gasto?')">📊 Top categorias</button>
-          <button class="sugg-btn" onclick="setQ('Tem algum gasto que está crescendo?')">📈 Tendências</button>
-          <button class="sugg-btn" onclick="setQ('Me dá dicas de economia baseadas nos meus dados')">💡 Dicas</button>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -455,7 +399,7 @@ const MONTH_NAMES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julh
 // ══════════════════════════════════════════════════════════════
 // STATE
 // ══════════════════════════════════════════════════════════════
-let WHO = null, TXS = [], CHAT = [], TAB = "add", EDIT_ID = null, AI_BUSY = false;
+let WHO = null, TXS = [], TAB = "add", EDIT_ID = null;
 let DB = null, txOff = null;
 let fbReady = false;
 let TAGS_BUFFER = [];
@@ -615,7 +559,6 @@ function switchTab(t){
   if(t==="add")     renderAddForm();
   if(t==="history") renderHistory();
   if(t==="summary") renderSummary();
-  if(t==="chat")    initChat();
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -1105,130 +1048,6 @@ function confirmDelete(){
   closeModal();
   updateUI();
   if(TAB==="history") renderHistory();
-}
-
-// ══════════════════════════════════════════════════════════════
-// CHAT / AI
-// ══════════════════════════════════════════════════════════════
-function initChat(){
-  if(CHAT.length===0){
-    addBotMsg("Olá! 👋 Sou seu assistente financeiro. Analisei seus dados e estou pronto para responder perguntas sobre suas finanças, identificar padrões e dar sugestões. O que quer saber?");
-  }
-}
-
-function setQ(q){document.getElementById("chat-inp").value=q;sendMsg();}
-
-function clearChat(){CHAT=[];document.getElementById("chat-msgs").innerHTML="";initChat();}
-
-function addBotMsg(txt, isTyping=false){
-  const c = document.getElementById("chat-msgs");
-  const id = "m_"+Date.now();
-  const div = document.createElement("div");
-  div.className="msg-row";
-  div.id=id;
-  div.innerHTML=`<div class="bot-av">🤖</div><div class="bot-bub">${isTyping?`<div class="typing-dots"><span>●</span><span>●</span><span>●</span></div>`:`<div class="msg-txt">${txt}</div>`}</div>`;
-  c.appendChild(div);
-  c.scrollTop=c.scrollHeight;
-  return id;
-}
-
-function updateBotMsg(id,txt){
-  const el = document.getElementById(id);
-  if(!el) return;
-  el.querySelector(".bot-bub").innerHTML=`<div class="msg-txt">${txt}</div>`;
-  document.getElementById("chat-msgs").scrollTop=9999;
-}
-
-function addUserMsg(txt){
-  const c = document.getElementById("chat-msgs");
-  const div = document.createElement("div");
-  div.className="msg-row user";
-  div.innerHTML=`<div class="user-bub"><div class="msg-txt">${txt}</div></div>`;
-  c.appendChild(div);
-  c.scrollTop=c.scrollHeight;
-}
-
-async function sendMsg(){
-  const inp = document.getElementById("chat-inp");
-  const q = inp.value.trim();
-  if(!q||AI_BUSY) return;
-  inp.value="";
-  AI_BUSY=true;
-  document.getElementById("send-btn").disabled=true;
-  addUserMsg(q);
-  CHAT.push({role:"user",content:q});
-
-  const loadId = addBotMsg("",true);
-
-  const mTXS = txsForMonth(CUR_MONTH,CUR_YEAR);
-  const income  = mTXS.filter(t=>t.type==="income").reduce((s,t)=>s+t.amount,0);
-  const expense = mTXS.filter(t=>t.type==="expense").reduce((s,t)=>s+t.amount,0);
-
-  const catTotals={};
-  mTXS.filter(t=>t.type==="expense").forEach(t=>catTotals[t.category]=(catTotals[t.category]||0)+t.amount);
-
-  const context = `
-Você é um assistente financeiro pessoal inteligente para um casal (Marido e Esposa).
-Fale em português brasileiro de forma amigável, direta e clara.
-Dê análises reais baseadas nos dados. Seja específico com valores em reais.
-Use emojis moderadamente para tornar a leitura agradável.
-Nunca invente dados. Se não houver dados suficientes, diga isso claramente.
-
-=== DADOS DO MÊS ATUAL (${MONTH_NAMES[CUR_MONTH]}/${CUR_YEAR}) ===
-Receita total: ${fmtBRL(income)}
-Gasto total: ${fmtBRL(expense)}
-Saldo: ${fmtBRL(income-expense)}
-Lançamentos: ${mTXS.length}
-
-Gastos por categoria:
-${Object.entries(catTotals).map(([k,v])=>`- ${k}: ${fmtBRL(v)}`).join("\n")||"Nenhum gasto registrado."}
-
-Gastos por pessoa:
-- Marido: ${fmtBRL(mTXS.filter(t=>t.who==="marido"&&t.type==="expense").reduce((s,t)=>s+t.amount,0))}
-- Esposa: ${fmtBRL(mTXS.filter(t=>t.who==="esposa"&&t.type==="expense").reduce((s,t)=>s+t.amount,0))}
-
-Últimos 10 lançamentos:
-${mTXS.slice(0,10).map(t=>`${new Date(t.datetime).toLocaleDateString("pt-BR")} | ${t.type==="income"?"+":"-"}${fmtBRL(t.amount)} | ${t.category}${t.subcategory?" > "+t.subcategory:""} | ${t.description} | ${t.who}`).join("\n")||"Nenhum lançamento."}
-
-=== HISTÓRICO TOTAL (todos os meses) ===
-Total de lançamentos: ${TXS.length}
-Receita total histórica: ${fmtBRL(TXS.filter(t=>t.type==="income").reduce((s,t)=>s+t.amount,0))}
-Gasto total histórico: ${fmtBRL(TXS.filter(t=>t.type==="expense").reduce((s,t)=>s+t.amount,0))}
-`;
-
-  try{
-    const resp = await fetch("https://api.anthropic.com/v1/messages",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({
-        model:"claude-sonnet-4-20250514",
-        max_tokens:1000,
-        system:context,
-        messages:CHAT.slice(-10)
-      })
-    });
-    const data = await resp.json();
-    if(data.error){
-      updateBotMsg(loadId,"❌ Erro: "+data.error.message);
-      showAiErr(data.error.message);
-    } else {
-      const txt = data.content?.map(b=>b.text||"").join("\n").trim()||"Sem resposta.";
-      CHAT.push({role:"assistant",content:txt});
-      updateBotMsg(loadId, txt.replace(/\n/g,"<br>"));
-    }
-  }catch(e){
-    updateBotMsg(loadId,"❌ Erro de conexão. Verifique sua internet.");
-    showAiErr(e.message);
-  }
-  AI_BUSY=false;
-  document.getElementById("send-btn").disabled=false;
-  document.getElementById("chat-msgs").scrollTop=9999;
-}
-
-function showAiErr(msg){
-  const el=document.getElementById("ai-err");
-  document.getElementById("ai-err-txt").textContent=msg;
-  el.style.display="flex";
 }
 
 // ══════════════════════════════════════════════════════════════
