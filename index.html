@@ -108,7 +108,7 @@ input,select,textarea{font-family:var(--fb);}
 .form-input::placeholder{color:var(--text3);}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
-.pay-btn{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:10px 8px;color:var(--text3);font-weight:600;font-size:12px;transition:all .2s;}
+.pay-btn{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:10px 8px;color:var(--text3);font-weight:600;font-size:12px;transition:all .2s;text-align:center;}
 .pay-btn.active{background:var(--blue-bg);border-color:rgba(74,158,255,.4);color:var(--blue);}
 .save-btn{width:100%;background:linear-gradient(135deg,var(--blue),#2d7dd6);border:none;border-radius:var(--r);padding:14px;color:#fff;font-size:15px;font-weight:700;margin-top:18px;font-family:var(--fh);transition:opacity .2s;}
 .save-btn:disabled{opacity:.5;cursor:not-allowed;}
@@ -123,15 +123,21 @@ input,select,textarea{font-family:var(--fb);}
 .chip{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;color:var(--text2);font-weight:600;transition:all .2s;}
 .chip:hover,.chip.active{background:var(--blue-bg);border-color:rgba(74,158,255,.4);color:var(--blue);}
 
+/* CARD CHIPS */
+.card-chips-wrap{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;}
+.card-chip{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;color:var(--text2);font-weight:600;transition:all .2s;cursor:pointer;}
+.card-chip:hover,.card-chip.active{background:var(--amber-bg);border-color:rgba(245,166,35,.4);color:var(--amber);}
+
 .tx-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:border-color .2s,transform .15s;animation:fadeIn .3s;}
 .tx-card:hover{border-color:var(--border2);transform:translateY(-1px);}
 .tx-card.is-installment{border-left:3px solid var(--purple);}
 .tx-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
 .tx-left{flex:1;min-width:0;}
-.tx-cat-row{display:flex;align-items:center;gap:5px;margin-bottom:2px;}
+.tx-cat-row{display:flex;align-items:center;gap:5px;margin-bottom:2px;flex-wrap:wrap;}
 .tx-cat{font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.7px;}
 .tx-subcat{font-size:10px;background:var(--surface2);color:var(--text3);border-radius:4px;padding:1px 6px;border:1px solid var(--border);}
 .tx-inst-badge{font-size:10px;background:var(--purple-bg);color:var(--purple);border-radius:4px;padding:1px 6px;border:1px solid rgba(167,139,250,.3);}
+.tx-card-badge{font-size:10px;background:var(--amber-bg);color:var(--amber);border-radius:4px;padding:1px 6px;border:1px solid rgba(245,166,35,.3);}
 .tx-desc{font-size:14px;color:var(--text);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .tx-amount{font-family:var(--fh);font-size:15px;font-weight:800;flex-shrink:0;margin-left:10px;}
 .tx-meta{display:flex;gap:6px;font-size:10px;color:var(--text3);flex-wrap:wrap;align-items:center;margin-top:3px;}
@@ -162,6 +168,7 @@ input,select,textarea{font-family:var(--fb);}
 .cat-val{font-family:var(--fh);font-size:13px;color:var(--red);font-weight:700;}
 .cat-bar-bg{background:var(--border);border-radius:4px;height:4px;}
 .cat-bar-fill{background:linear-gradient(90deg,var(--blue),#2d7dd6);border-radius:4px;height:4px;transition:width .8s cubic-bezier(.4,0,.2,1);}
+.cat-bar-fill-amber{background:linear-gradient(90deg,var(--amber),#d4840a);border-radius:4px;height:4px;transition:width .8s cubic-bezier(.4,0,.2,1);}
 .person-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:11px;}
 .person-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;text-align:center;}
 .person-emoji{font-size:26px;margin-bottom:5px;}
@@ -185,6 +192,16 @@ input,select,textarea{font-family:var(--fb);}
 .inst-item:last-child{border-bottom:none;}
 .inst-name{font-size:13px;color:var(--text);flex:1;}
 .inst-info{font-size:11px;color:var(--purple);font-weight:600;}
+
+/* CARD SUMMARY */
+.card-sum-card{background:var(--amber-bg);border:1px solid rgba(245,166,35,.25);border-radius:var(--r);padding:15px;margin-bottom:11px;}
+.card-sum-title{font-family:var(--fh);font-size:10px;color:var(--amber);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+.card-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(245,166,35,.15);}
+.card-item:last-child{border-bottom:none;}
+.card-item-left{flex:1;}
+.card-item-name{font-size:13px;color:var(--text);font-weight:600;}
+.card-item-count{font-size:11px;color:var(--text3);margin-top:2px;}
+.card-item-val{font-family:var(--fh);font-size:14px;font-weight:800;color:var(--amber);}
 
 .stab-row{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap;}
 .stab-btn{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:7px 14px;font-size:12px;color:var(--text3);font-weight:600;transition:all .2s;white-space:nowrap;}
@@ -217,10 +234,6 @@ input,select,textarea{font-family:var(--fb);}
 .cpick-preview{width:28px;height:28px;border-radius:7px;border:2px solid var(--border2);cursor:pointer;transition:transform .15s;}
 .cpick-preview:hover{transform:scale(1.1);}
 input[type=color]{width:36px;height:36px;border:none;background:transparent;cursor:pointer;padding:0;border-radius:8px;overflow:hidden;}
-
-.gradient-row{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
-.gradient-chip{border-radius:8px;padding:6px 12px;font-size:11px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:all .2s;color:#fff;}
-.gradient-chip.selected{border-color:#fff;box-shadow:0 0 0 3px var(--blue);}
 
 .font-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
 .font-card{background:var(--surface);border:2px solid var(--border);border-radius:var(--r);padding:14px 12px;cursor:pointer;transition:all .2s;text-align:center;}
@@ -294,6 +307,13 @@ input[type=color]{width:36px;height:36px;border:none;background:transparent;curs
 .palette-name{font-size:11px;font-weight:600;color:var(--text2);}
 
 .divider{height:1px;background:var(--border);margin:16px 0;}
+
+/* Credit card visual */
+.card-visual{background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid var(--border2);border-radius:12px;padding:14px;margin-bottom:8px;position:relative;overflow:hidden;}
+.card-visual::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.04);}
+.card-visual-name{font-family:var(--fh);font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;}
+.card-visual-total{font-family:var(--fh);font-size:20px;font-weight:800;color:var(--amber);}
+.card-visual-count{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;}
 </style>
 </head>
 <body>
@@ -400,7 +420,6 @@ input[type=color]{width:36px;height:36px;border:none;background:transparent;curs
 // ════════════════════════════════════════════════
 // APPEARANCE SYSTEM
 // ════════════════════════════════════════════════
-
 const THEMES_DATA = [
   {id:"dark-blue",   name:"Dark Blue",    sub:"Padrão",          bg:"#08090f",surface:"#0e101a",surface2:"#141824",border:"#1c2030",border2:"#252d42",text:"#eef0f6",text2:"#8892a4",text3:"#4d576a",accent:"#4a9eff",green:"#2dce7a",red:"#f05c6e",amber:"#f5a623",purple:"#a78bfa",pink:"#e855a3"},
   {id:"dark-green",  name:"Dark Green",   sub:"Natureza",        bg:"#070d0a",surface:"#0b150f",surface2:"#112016",border:"#1a2e20",border2:"#234029",text:"#eef5f0",text2:"#7a9e85",text3:"#3d5e45",accent:"#2dce7a",green:"#2dce7a",red:"#f05c6e",amber:"#f5a623",purple:"#a78bfa",pink:"#e855a3"},
@@ -408,12 +427,8 @@ const THEMES_DATA = [
   {id:"dark-rose",   name:"Dark Rose",    sub:"Estilo",          bg:"#0f070a",surface:"#1a0e12",surface2:"#22141a",border:"#301a22",border2:"#42222e",text:"#f6eef1",text2:"#a4889a",text3:"#6a4956",accent:"#e855a3",green:"#2dce7a",red:"#f05c6e",amber:"#f5a623",purple:"#a78bfa",pink:"#e855a3"},
   {id:"midnight",    name:"Midnight",     sub:"Mais escuro",     bg:"#010408",surface:"#060c14",surface2:"#0b1420",border:"#101e2e",border2:"#162840",text:"#ddeeff",text2:"#6a8ba8",text3:"#2e4a63",accent:"#38bdf8",green:"#2dce7a",red:"#f05c6e",amber:"#f5a623",purple:"#a78bfa",pink:"#e855a3"},
   {id:"charcoal",    name:"Charcoal",     sub:"Neutro",          bg:"#0c0c0c",surface:"#161616",surface2:"#1e1e1e",border:"#282828",border2:"#333333",text:"#f0f0f0",text2:"#888888",text3:"#505050",accent:"#e0e0e0",green:"#2dce7a",red:"#f05c6e",amber:"#f5a623",purple:"#a78bfa",pink:"#e855a3"},
-  {id:"ocean",       name:"Ocean",        sub:"Azul profundo",   bg:"#040e18",surface:"#07172a",surface2:"#0c2040",border:"#103050",border2:"#164068",text:"#c8eaff",text2:"#5a9abc",text3:"#2a6080",accent:"#0ea5e9",green:"#2dce7a",red:"#f05c6e",amber:"#f5a623",purple:"#a78bfa",pink:"#e855a3"},
-  {id:"forest",      name:"Forest",       sub:"Verde musgo",     bg:"#050f08",surface:"#091a0d",surface2:"#0f2515",border:"#153020",border2:"#1e4028",text:"#d4f0dc",text2:"#6aaa7a",text3:"#2d6040",accent:"#4ade80",green:"#4ade80",red:"#f05c6e",amber:"#f5a623",purple:"#a78bfa",pink:"#e855a3"},
-  {id:"sunset",      name:"Sunset",       sub:"Quente e vibrante",bg:"#100808",surface:"#1e0d0d",surface2:"#2a1212",border:"#3a1818",border2:"#4e2020",text:"#fff0e8",text2:"#cc9966",text3:"#885533",accent:"#fb923c",green:"#4ade80",red:"#f87171",amber:"#fbbf24",purple:"#a78bfa",pink:"#f472b6"},
   {id:"light",       name:"Light",        sub:"Claro",           bg:"#f4f6f9",surface:"#ffffff",surface2:"#f0f2f5",border:"#e2e6ed",border2:"#c8cfd9",text:"#111827",text2:"#4b5563",text3:"#9ca3af",accent:"#2563eb",green:"#16a34a",red:"#dc2626",amber:"#d97706",purple:"#7c3aed",pink:"#db2777"},
   {id:"light-warm",  name:"Light Warm",   sub:"Suave",           bg:"#faf8f4",surface:"#ffffff",surface2:"#f5f0e8",border:"#e8dfc8",border2:"#d4c8a8",text:"#1c1610",text2:"#6b5b45",text3:"#a89070",accent:"#c2622a",green:"#2d8a4e",red:"#c0392b",amber:"#e67e22",purple:"#8e44ad",pink:"#c0392b"},
-  {id:"light-blue",  name:"Light Blue",   sub:"Frescor",         bg:"#f0f6ff",surface:"#ffffff",surface2:"#e8f0fc",border:"#c8d8f0",border2:"#a0b8e0",text:"#0a1a3a",text2:"#3a5a8a",text3:"#7090c0",accent:"#1d4ed8",green:"#16a34a",red:"#dc2626",amber:"#d97706",purple:"#7c3aed",pink:"#db2777"},
 ];
 
 const FONTS_DATA = [
@@ -422,8 +437,6 @@ const FONTS_DATA = [
   {id:"poppins",      head:"'Poppins',sans-serif",          body:"'Poppins',sans-serif",           sample:"Aa",name:"Poppins",pair:"Arredondada"},
   {id:"space-grotesk",head:"'Space Grotesk',sans-serif",    body:"'Space Grotesk',sans-serif",     sample:"Aa",name:"Space Grotesk",pair:"Geométrica"},
   {id:"nunito",       head:"'Nunito',sans-serif",           body:"'Nunito',sans-serif",            sample:"Aa",name:"Nunito",pair:"Amigável"},
-  {id:"outfit",       head:"'Outfit',sans-serif",           body:"'Outfit',sans-serif",            sample:"Aa",name:"Outfit",pair:"Contemporânea"},
-  {id:"jakarta",      head:"'Plus Jakarta Sans',sans-serif",body:"'Plus Jakarta Sans',sans-serif", sample:"Aa",name:"Jakarta Sans",pair:"Profissional"},
 ];
 
 const SIZES_DATA = [
@@ -448,12 +461,12 @@ const SPACING_DATA = [
 ];
 
 const COLOR_PALETTES = [
-  {id:"neon-dark",   name:"Neon",       colors:{accent:"#00ff88",green:"#00ff88",red:"#ff4466",blue:"#4a9eff"}},
-  {id:"pastel",      name:"Pastel",     colors:{accent:"#7eb8f7",green:"#7edca8",red:"#f7a0a8",blue:"#7eb8f7"}},
-  {id:"vibrant",     name:"Vibrante",   colors:{accent:"#ff6b35",green:"#06d6a0",red:"#ef233c",blue:"#4cc9f0"}},
-  {id:"mono-blue",   name:"Azul",       colors:{accent:"#60a5fa",green:"#34d399",red:"#f87171",blue:"#60a5fa"}},
-  {id:"mono-purple", name:"Roxo",       colors:{accent:"#c084fc",green:"#4ade80",red:"#f87171",blue:"#c084fc"}},
-  {id:"gold",        name:"Ouro",       colors:{accent:"#fbbf24",green:"#4ade80",red:"#f87171",blue:"#60a5fa"}},
+  {id:"neon-dark",   name:"Neon",       colors:{accent:"#00ff88",green:"#00ff88",red:"#ff4466"}},
+  {id:"pastel",      name:"Pastel",     colors:{accent:"#7eb8f7",green:"#7edca8",red:"#f7a0a8"}},
+  {id:"vibrant",     name:"Vibrante",   colors:{accent:"#ff6b35",green:"#06d6a0",red:"#ef233c"}},
+  {id:"mono-blue",   name:"Azul",       colors:{accent:"#60a5fa",green:"#34d399",red:"#f87171"}},
+  {id:"mono-purple", name:"Roxo",       colors:{accent:"#c084fc",green:"#4ade80",red:"#f87171"}},
+  {id:"gold",        name:"Ouro",       colors:{accent:"#fbbf24",green:"#4ade80",red:"#f87171"}},
 ];
 
 let APPEARANCE = {
@@ -467,137 +480,123 @@ let APPEARANCE = {
 };
 
 function loadAppearance(){
-  try{
-    const s = localStorage.getItem("appearance_v2");
-    if(s) APPEARANCE = {...APPEARANCE, ...JSON.parse(s)};
-  }catch(e){}
+  try{ const s=localStorage.getItem("appearance_v2"); if(s) APPEARANCE={...APPEARANCE,...JSON.parse(s)}; }catch(e){}
   applyAppearance();
 }
+function saveAppearance(){ localStorage.setItem("appearance_v2",JSON.stringify(APPEARANCE)); }
 
-function saveAppearance(){
-  localStorage.setItem("appearance_v2", JSON.stringify(APPEARANCE));
-}
-
-function hexToRgba(hex, a){
+function hexToRgba(hex,a){
   if(!hex||!hex.startsWith("#")) return `rgba(0,0,0,${a})`;
-  const hx = hex.replace("#","");
-  const full = hx.length===3 ? hx.split("").map(c=>c+c).join("") : hx;
-  const r=parseInt(full.slice(0,2),16), g=parseInt(full.slice(2,4),16), b=parseInt(full.slice(4,6),16);
+  const hx=hex.replace("#","");
+  const full=hx.length===3?hx.split("").map(c=>c+c).join(""):hx;
+  const r=parseInt(full.slice(0,2),16),g=parseInt(full.slice(2,4),16),b=parseInt(full.slice(4,6),16);
   return `rgba(${r},${g},${b},${a})`;
 }
 
 function applyAppearance(){
-  const theme = THEMES_DATA.find(t=>t.id===APPEARANCE.themeId)||THEMES_DATA[0];
-  const font  = FONTS_DATA.find(f=>f.id===APPEARANCE.fontId)||FONTS_DATA[0];
-  const size  = SIZES_DATA.find(s=>s.id===APPEARANCE.sizeId)||SIZES_DATA[2];
-  const radius= RADIUS_DATA.find(r=>r.id===APPEARANCE.radiusId)||RADIUS_DATA[2];
-  const spacing = SPACING_DATA.find(s=>s.id===APPEARANCE.spacingId)||SPACING_DATA[1];
-  const c = APPEARANCE.customColors;
-  const root = document.documentElement;
+  const theme=THEMES_DATA.find(t=>t.id===APPEARANCE.themeId)||THEMES_DATA[0];
+  const font=FONTS_DATA.find(f=>f.id===APPEARANCE.fontId)||FONTS_DATA[0];
+  const size=SIZES_DATA.find(s=>s.id===APPEARANCE.sizeId)||SIZES_DATA[2];
+  const radius=RADIUS_DATA.find(r=>r.id===APPEARANCE.radiusId)||RADIUS_DATA[2];
+  const spacing=SPACING_DATA.find(s=>s.id===APPEARANCE.spacingId)||SPACING_DATA[1];
+  const c=APPEARANCE.customColors;
+  const root=document.documentElement;
+  const resolve=(key,fallback)=>c[key]||fallback;
 
-  const resolve = (key, fallback) => c[key] || fallback;
-  const bg      = resolve("--bg",      theme.bg);
-  const surface = resolve("--surface", theme.surface);
-  const surface2= resolve("--surface2",theme.surface2);
-  const border  = resolve("--border",  theme.border);
-  const border2 = resolve("--border2", theme.border2);
-  const text    = resolve("--text",    theme.text);
-  const text2   = resolve("--text2",   theme.text2);
-  const text3   = resolve("--text3",   theme.text3);
-  const accent  = resolve("--blue",    theme.accent);
-  const green   = resolve("--green",   theme.green);
-  const red     = resolve("--red",     theme.red);
-  const amber   = resolve("--amber",   theme.amber);
-  const purple  = resolve("--purple",  theme.purple);
-  const pink    = resolve("--pink",    theme.pink);
+  const bg=resolve("--bg",theme.bg); const surface=resolve("--surface",theme.surface);
+  const surface2=resolve("--surface2",theme.surface2); const border=resolve("--border",theme.border);
+  const border2=resolve("--border2",theme.border2); const text=resolve("--text",theme.text);
+  const text2=resolve("--text2",theme.text2); const text3=resolve("--text3",theme.text3);
+  const accent=resolve("--blue",theme.accent); const green=resolve("--green",theme.green);
+  const red=resolve("--red",theme.red); const amber=resolve("--amber",theme.amber);
+  const purple=resolve("--purple",theme.purple); const pink=resolve("--pink",theme.pink);
 
-  root.style.setProperty("--bg",        bg);
-  root.style.setProperty("--surface",   surface);
-  root.style.setProperty("--surface2",  surface2);
-  root.style.setProperty("--border",    border);
-  root.style.setProperty("--border2",   border2);
-  root.style.setProperty("--text",      text);
-  root.style.setProperty("--text2",     text2);
-  root.style.setProperty("--text3",     text3);
-  root.style.setProperty("--blue",      accent);
-  root.style.setProperty("--blue-bg",   hexToRgba(accent,.12));
-  root.style.setProperty("--green",     green);
-  root.style.setProperty("--green-bg",  hexToRgba(green,.12));
-  root.style.setProperty("--red",       red);
-  root.style.setProperty("--red-bg",    hexToRgba(red,.1));
-  root.style.setProperty("--amber",     amber);
-  root.style.setProperty("--amber-bg",  hexToRgba(amber,.1));
-  root.style.setProperty("--purple",    purple);
-  root.style.setProperty("--purple-bg", hexToRgba(purple,.12));
-  root.style.setProperty("--pink",      pink);
-  root.style.setProperty("--pink-bg",   hexToRgba(pink,.12));
-
-  root.style.setProperty("--fh", font.head);
-  root.style.setProperty("--fb", font.body);
-  document.body.style.fontFamily = font.body;
-
-  root.style.setProperty("--fs-base", size.base);
-  document.body.style.fontSize = size.base;
-
-  root.style.setProperty("--r",  radius.card);
-  root.style.setProperty("--rs", radius.btn);
-  root.style.setProperty("--radius-card", radius.card);
-  root.style.setProperty("--radius-btn",  radius.btn);
-
-  const m = parseFloat(spacing.mult);
-  root.style.setProperty("--space-sm",  (8*m)+"px");
-  root.style.setProperty("--space-md",  (12*m)+"px");
-  root.style.setProperty("--space-lg",  (16*m)+"px");
-
-  let styleEl = document.getElementById("dynamic-style");
-  if(!styleEl){ styleEl=document.createElement("style"); styleEl.id="dynamic-style"; document.head.appendChild(styleEl); }
-  styleEl.textContent = `select option { background: ${surface}; } .app-header { background: ${bg}ee; }`;
+  root.style.setProperty("--bg",bg); root.style.setProperty("--surface",surface);
+  root.style.setProperty("--surface2",surface2); root.style.setProperty("--border",border);
+  root.style.setProperty("--border2",border2); root.style.setProperty("--text",text);
+  root.style.setProperty("--text2",text2); root.style.setProperty("--text3",text3);
+  root.style.setProperty("--blue",accent); root.style.setProperty("--blue-bg",hexToRgba(accent,.12));
+  root.style.setProperty("--green",green); root.style.setProperty("--green-bg",hexToRgba(green,.12));
+  root.style.setProperty("--red",red); root.style.setProperty("--red-bg",hexToRgba(red,.1));
+  root.style.setProperty("--amber",amber); root.style.setProperty("--amber-bg",hexToRgba(amber,.1));
+  root.style.setProperty("--purple",purple); root.style.setProperty("--purple-bg",hexToRgba(purple,.12));
+  root.style.setProperty("--pink",pink); root.style.setProperty("--pink-bg",hexToRgba(pink,.12));
+  root.style.setProperty("--fh",font.head); root.style.setProperty("--fb",font.body);
+  document.body.style.fontFamily=font.body;
+  root.style.setProperty("--fs-base",size.base); document.body.style.fontSize=size.base;
+  root.style.setProperty("--r",radius.card); root.style.setProperty("--rs",radius.btn);
+  const m=parseFloat(spacing.mult);
+  root.style.setProperty("--space-sm",(8*m)+"px"); root.style.setProperty("--space-md",(12*m)+"px"); root.style.setProperty("--space-lg",(16*m)+"px");
+  let styleEl=document.getElementById("dynamic-style");
+  if(!styleEl){styleEl=document.createElement("style");styleEl.id="dynamic-style";document.head.appendChild(styleEl);}
+  styleEl.textContent=`select option{background:${surface};} .app-header{background:${bg}ee;}`;
 }
 
-function setTheme(id){
-  APPEARANCE.themeId = id;
-  APPEARANCE.customColors = {};
-  saveAppearance(); applyAppearance(); renderSettings();
-}
+function setTheme(id){ APPEARANCE.themeId=id; APPEARANCE.customColors={}; saveAppearance(); applyAppearance(); renderSettings(); }
 function setFont(id){ APPEARANCE.fontId=id; saveAppearance(); applyAppearance(); renderSettings(); }
 function setSize(id){ APPEARANCE.sizeId=id; saveAppearance(); applyAppearance(); renderSettings(); }
 function setRadius(id){ APPEARANCE.radiusId=id; saveAppearance(); applyAppearance(); renderSettings(); }
 function setSpacing(id){ APPEARANCE.spacingId=id; saveAppearance(); applyAppearance(); renderSettings(); }
 
 function applyColorPalette(id){
-  const p = COLOR_PALETTES.find(p=>p.id===id);
-  if(!p) return;
+  const p=COLOR_PALETTES.find(p=>p.id===id); if(!p) return;
   Object.entries(p.colors).forEach(([k,v])=>{
-    const cssKey = k==="accent"?"--blue":"--"+k;
-    APPEARANCE.customColors[cssKey] = v;
-    if(cssKey==="--blue") APPEARANCE.customColors["--blue-bg"] = hexToRgba(v,.12);
-    if(cssKey==="--green") APPEARANCE.customColors["--green-bg"] = hexToRgba(v,.12);
-    if(cssKey==="--red") APPEARANCE.customColors["--red-bg"] = hexToRgba(v,.1);
+    const cssKey=k==="accent"?"--blue":"--"+k;
+    APPEARANCE.customColors[cssKey]=v;
+    if(cssKey==="--blue") APPEARANCE.customColors["--blue-bg"]=hexToRgba(v,.12);
+    if(cssKey==="--green") APPEARANCE.customColors["--green-bg"]=hexToRgba(v,.12);
+    if(cssKey==="--red") APPEARANCE.customColors["--red-bg"]=hexToRgba(v,.1);
   });
   saveAppearance(); applyAppearance(); renderSettings();
 }
 
-function updateCustomColor(cssVar, hex){
-  APPEARANCE.customColors[cssVar] = hex;
-  if(cssVar==="--blue")   APPEARANCE.customColors["--blue-bg"]   = hexToRgba(hex,.12);
-  if(cssVar==="--green")  APPEARANCE.customColors["--green-bg"]  = hexToRgba(hex,.12);
-  if(cssVar==="--red")    APPEARANCE.customColors["--red-bg"]    = hexToRgba(hex,.1);
-  if(cssVar==="--purple") APPEARANCE.customColors["--purple-bg"] = hexToRgba(hex,.12);
-  if(cssVar==="--pink")   APPEARANCE.customColors["--pink-bg"]   = hexToRgba(hex,.12);
+function updateCustomColor(cssVar,hex){
+  APPEARANCE.customColors[cssVar]=hex;
+  if(cssVar==="--blue") APPEARANCE.customColors["--blue-bg"]=hexToRgba(hex,.12);
+  if(cssVar==="--green") APPEARANCE.customColors["--green-bg"]=hexToRgba(hex,.12);
+  if(cssVar==="--red") APPEARANCE.customColors["--red-bg"]=hexToRgba(hex,.1);
+  if(cssVar==="--purple") APPEARANCE.customColors["--purple-bg"]=hexToRgba(hex,.12);
+  if(cssVar==="--pink") APPEARANCE.customColors["--pink-bg"]=hexToRgba(hex,.12);
   saveAppearance(); applyAppearance();
-  const prev = document.querySelector(`[data-cpick="${cssVar}"]`);
-  if(prev) prev.style.background = hex;
+  const prev=document.querySelector(`[data-cpick="${cssVar}"]`);
+  if(prev) prev.style.background=hex;
 }
 
-function resetAllAppearance(){
-  APPEARANCE = {themeId:"dark-blue",fontId:"syne-dm",sizeId:"md",radiusId:"round",spacingId:"normal",customColors:{},curSettingsTab:"temas"};
-  saveAppearance(); applyAppearance(); renderSettings();
-}
+function resetAllAppearance(){ APPEARANCE={themeId:"dark-blue",fontId:"syne-dm",sizeId:"md",radiusId:"round",spacingId:"normal",customColors:{},curSettingsTab:"temas"}; saveAppearance(); applyAppearance(); renderSettings(); }
 
 function switchSettingsTab(t){
-  APPEARANCE.curSettingsTab = t;
-  document.querySelectorAll(".stab-btn").forEach(b=>b.classList.toggle("active", b.dataset.tab===t));
-  document.querySelectorAll(".stab-panel").forEach(p=>p.classList.toggle("active", p.dataset.panel===t));
+  APPEARANCE.curSettingsTab=t;
+  document.querySelectorAll(".stab-btn").forEach(b=>b.classList.toggle("active",b.dataset.tab===t));
+  document.querySelectorAll(".stab-panel").forEach(p=>p.classList.toggle("active",p.dataset.panel===t));
+}
+
+// ════════════════════════════════════════════════
+// CARDS SYSTEM
+// ════════════════════════════════════════════════
+const DEFAULT_CARDS = [
+  {id:"nubank",      name:"Nubank",        emoji:"💜"},
+  {id:"itau",        name:"Itaú",          emoji:"🟠"},
+  {id:"bradesco",    name:"Bradesco",      emoji:"🔴"},
+  {id:"bb",          name:"Banco do Brasil",emoji:"🟡"},
+  {id:"caixa",       name:"Caixa",         emoji:"🔵"},
+  {id:"santander",   name:"Santander",     emoji:"🔴"},
+  {id:"inter",       name:"Inter",         emoji:"🟠"},
+  {id:"xp",          name:"XP",            emoji:"⚫"},
+  {id:"c6",          name:"C6 Bank",       emoji:"⬛"},
+  {id:"picpay",      name:"PicPay",        emoji:"🟢"},
+  {id:"stone",       name:"Stone",         emoji:"💚"},
+  {id:"mercadopago", name:"Mercado Pago",  emoji:"🔵"},
+];
+
+let USER_CARDS = []; // custom cards added by user
+
+function allCards(){
+  return [...DEFAULT_CARDS, ...USER_CARDS];
+}
+
+function saveUserCards(){
+  localStorage.setItem("user_cards",JSON.stringify(USER_CARDS));
+  if(fbReady&&DB) DB.ref("user_cards_list").set(USER_CARDS).catch(()=>{});
 }
 
 // ════════════════════════════════════════════════
@@ -619,16 +618,23 @@ const DEFAULT_CATS = {
   "🐾 Pet":          ["Ração","Veterinário","Banho/Tosa","Remédio","Outros"],
   "❓ Outros":       ["Presente","Doação","Saque","Não Especificado"]
 };
-const PAYS = [{v:"pix",l:"🔵 Pix"},{v:"dinheiro",l:"💵 Dinheiro"},{v:"debito",l:"💳 Débito"},{v:"credito",l:"💳 Crédito"}];
+
+const BASE_PAYS = [
+  {v:"pix",l:"🔵 Pix"},
+  {v:"dinheiro",l:"💵 Dinheiro"},
+  {v:"debito",l:"💳 Débito"},
+  {v:"credito",l:"💳 Crédito"},
+  {v:"transferencia",l:"🔄 Transferência"},
+];
+
 const MONTHS = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
 
 let WHO=null, TXS=[], TAB="add", EDIT_ID=null;
 let DB=null, fbReady=false, txOff=null;
 let CUR_MONTH=new Date().getMonth(), CUR_YEAR=new Date().getFullYear();
 let HIST_FILTER="all";
-let fType="expense", fCat="", fPay="pix";
-// Edit-mode local state (separate from add-form state)
-let editType="expense", editCat="", editPay="pix";
+let fType="expense", fCat="", fPay="pix", fCard="";
+let editType="expense", editCat="", editPay="pix", editCard="";
 let USER_CATS={};
 
 function allCats(){
@@ -662,7 +668,7 @@ function initFirebase(){
 }
 
 function setSyncBadge(state){
-  const b=document.getElementById("sync-badge"), t=document.getElementById("sync-txt");
+  const b=document.getElementById("sync-badge"),t=document.getElementById("sync-txt");
   if(!b) return;
   b.className="sync-badge sync-"+state;
   t.textContent=state==="online"?"Online":state==="offline"?"Offline":"Conectando";
@@ -678,6 +684,7 @@ function subscribeData(){
     updateUI();
   },()=>loadLocal());
   DB.ref("user_cats").on("value",snap=>{ USER_CATS=snap.val()||{}; });
+  DB.ref("user_cards_list").on("value",snap=>{ if(snap.val()) USER_CARDS=snap.val(); });
 }
 
 function loadLocal(){
@@ -704,9 +711,7 @@ function saveUserCats(){
 // ════════════════════════════════════════════════
 // AUTH
 // ════════════════════════════════════════════════
-function handleLogin(who){
-  WHO=who; localStorage.setItem("who",who); showApp();
-}
+function handleLogin(who){ WHO=who; localStorage.setItem("who",who); showApp(); }
 function handleLogout(){
   WHO=null; localStorage.removeItem("who");
   document.getElementById("login-screen").style.display="flex";
@@ -720,9 +725,7 @@ function showApp(){
   u.className="utag "+WHO;
   if(!fCat) fCat=catNames()[0];
   CUR_MONTH=new Date().getMonth(); CUR_YEAR=new Date().getFullYear();
-  updateMonthLabel();
-  subscribeData();
-  switchTab("add");
+  updateMonthLabel(); subscribeData(); switchTab("add");
 }
 
 // ════════════════════════════════════════════════
@@ -739,9 +742,7 @@ function updateMonthLabel(){
   const isCur=CUR_MONTH===now.getMonth()&&CUR_YEAR===now.getFullYear();
   document.getElementById("month-label").textContent=MONTHS[CUR_MONTH]+" "+CUR_YEAR+(isCur?" • Atual":"");
 }
-function txsForMonth(m,y){
-  return TXS.filter(t=>{ const d=new Date(t.datetime); return d.getMonth()===m&&d.getFullYear()===y; });
-}
+function txsForMonth(m,y){ return TXS.filter(t=>{ const d=new Date(t.datetime); return d.getMonth()===m&&d.getFullYear()===y; }); }
 
 // ════════════════════════════════════════════════
 // UPDATE UI
@@ -779,204 +780,107 @@ function switchTab(t){
 }
 
 // ════════════════════════════════════════════════
-// ADD FORM (main panel only)
+// ADD FORM
 // ════════════════════════════════════════════════
 function renderAddForm(){
   if(!fCat||!catNames().includes(fCat)) fCat=catNames()[0];
-  const cats=allCats();
-  const subs=cats[fCat]||[];
+  const cats=allCats(); const subs=cats[fCat]||[];
   const now=new Date();
   const curDate=now.toISOString().split("T")[0];
   const curTime=now.toTimeString().slice(0,5);
-
   const target=document.getElementById("add-form");
   if(!target) return;
-  target.innerHTML=buildFormHTML({
-    type: fType,
-    cat: fCat,
-    pay: fPay,
-    date: curDate,
-    time: curTime,
-    desc: "",
-    sub: "",
-    note: "",
-    amount: "",
-    isInstallment: false,
-    installments: 12,
-    subs,
-    isEdit: false,
-    whoLabel: WHO==="marido"?"👨 Marido":"👩 Esposa",
-    prefix: "f"
-  });
-  document.getElementById("f-amount")?.addEventListener("input", ()=>calcInstParcela("f"));
-}
 
-// ════════════════════════════════════════════════
-// EDIT MODAL — completely separate rendering
-// ════════════════════════════════════════════════
-function openEdit(id){
-  EDIT_ID=id;
-  const tx=TXS.find(t=>t.id===id);
-  if(!tx) return;
+  const showCardSection = (fPay==="credito"||fPay==="debito");
 
-  editType = tx.type||"expense";
-  editCat  = tx.category||catNames()[0];
-  editPay  = tx.payment||"pix";
-
-  const [date,time]=(tx.datetime||"").split("T");
-
-  document.getElementById("modal-title").textContent="✏️ Editar Lançamento";
-  document.getElementById("modal-ov").classList.add("open");
-
-  renderEditModal(tx, date, time?.slice(0,5));
-}
-
-function renderEditModal(tx, date, time){
-  const cats=allCats();
-  const subs=cats[editCat]||[];
-  const mb=document.getElementById("modal-body");
-  mb.innerHTML=`
-  <div id="edit-msg"></div>
+  target.innerHTML=`
   <div class="type-row">
-    <button class="type-btn ${editType==="expense"?"ae":""}" id="edit-btn-expense" onclick="setEditType('expense')">💸 Gasto</button>
-    <button class="type-btn ${editType==="income"?"ai":""}" id="edit-btn-income" onclick="setEditType('income')">💰 Receita</button>
+    <button class="type-btn ${fType==="expense"?"ae":""}" onclick="setType('expense',this)">💸 Gasto</button>
+    <button class="type-btn ${fType==="income"?"ai":""}" onclick="setType('income',this)">💰 Receita</button>
   </div>
   <label class="form-label">Valor (R$)</label>
-  <input class="form-input" type="number" inputmode="decimal" id="e-amount" placeholder="0,00" value="${tx.amount||""}" step="0.01" min="0"/>
+  <input class="form-input" type="number" inputmode="decimal" id="f-amount" placeholder="0,00" value="" step="0.01" min="0"/>
   <label class="form-label">Descrição</label>
-  <input class="form-input" id="e-desc" placeholder="Descrição…" value="${tx.description||""}"/>
+  <input class="form-input" id="f-desc" placeholder="Ex: Celular Samsung, Barbearia, Mercado…" value=""/>
   <label class="form-label">Categoria</label>
-  <select class="form-input" id="e-cat" onchange="onEditCatChange()">
-    ${catNames().map(cn=>`<option value="${cn}" ${cn===editCat?"selected":""}>${cn}</option>`).join("")}
+  <select class="form-input" id="f-cat" onchange="onCatChange()">
+    ${catNames().map(cn=>`<option value="${cn}" ${cn===fCat?"selected":""}>${cn}</option>`).join("")}
   </select>
   <label class="form-label">Subcategoria</label>
-  <div class="chips-wrap" id="edit-subcat-chips">
-    ${subs.map(s=>`<button class="chip ${s===(tx.subcategory||"")?"active":""}" onclick="selectEditSub('${s.replace(/'/g,"\\'")}',this)">${s}</button>`).join("")}
+  <div class="chips-wrap" id="subcat-chips">
+    ${subs.map(s=>`<button class="chip" onclick="selectSub('${s.replace(/'/g,"\\'")}',this)">${s}</button>`).join("")}
   </div>
-  <input class="form-input" id="e-sub" placeholder="Ou escreva…" value="${tx.subcategory||""}" style="margin-top:8px;"/>
+  <input class="form-input" id="f-sub" placeholder="Ou escreva…" value="" style="margin-top:8px;"/>
   <div class="form-row">
-    <div><label class="form-label">Data</label><input class="form-input" type="date" id="e-date" value="${date||""}"/></div>
-    <div><label class="form-label">Hora</label><input class="form-input" type="time" id="e-time" value="${time||""}"/></div>
+    <div><label class="form-label">Data</label><input class="form-input" type="date" id="f-date" value="${curDate}"/></div>
+    <div><label class="form-label">Hora</label><input class="form-input" type="time" id="f-time" value="${curTime}"/></div>
   </div>
   <label class="form-label">Forma de Pagamento</label>
   <div class="pay-grid">
-    ${PAYS.map(p=>`<button class="pay-btn ${editPay===p.v?"active":""}" onclick="setEditPay('${p.v}',this)">${p.l}</button>`).join("")}
+    ${BASE_PAYS.map(p=>`<button class="pay-btn ${fPay===p.v?"active":""}" onclick="setAddPay('${p.v}',this)">${p.l}</button>`).join("")}
   </div>
-  <label class="form-label">Observação (opcional)</label>
-  <input class="form-input" id="e-note" placeholder="Detalhes adicionais…" value="${tx.notes||""}"/>
-  <div class="user-info-row">👤 Lançado por: <strong>${tx.who==="marido"?"👨 Marido":"👩 Esposa"}</strong></div>
-  <div id="edit-form-err"></div>
-  <button class="save-btn" onclick="saveEdit()">✅ Salvar Alterações</button>
-  <button class="cancel-btn" onclick="closeModal()">Cancelar</button>
-  <button class="delete-btn" onclick="deleteFromModal()">🗑️ Excluir Lançamento</button>
-  <div id="confirm-del-wrap"></div>`;
-}
-
-function setEditType(t){
-  editType=t;
-  document.getElementById("edit-btn-expense")?.classList.toggle("ae", t==="expense");
-  document.getElementById("edit-btn-expense")?.classList.toggle("ai", false);
-  document.getElementById("edit-btn-income")?.classList.toggle("ai", t==="income");
-  document.getElementById("edit-btn-income")?.classList.toggle("ae", false);
-}
-
-function onEditCatChange(){
-  editCat=document.getElementById("e-cat")?.value;
-  const subs=(allCats()[editCat]||[]);
-  const chipsEl=document.getElementById("edit-subcat-chips");
-  if(chipsEl) chipsEl.innerHTML=subs.map(s=>`<button class="chip" onclick="selectEditSub('${s.replace(/'/g,"\\'")}',this)">${s}</button>`).join("");
-  const subInp=document.getElementById("e-sub");
-  if(subInp) subInp.value="";
-}
-
-function selectEditSub(s,el){
-  document.querySelectorAll("#edit-subcat-chips .chip").forEach(c=>c.classList.remove("active"));
-  el.classList.add("active");
-  const subInp=document.getElementById("e-sub");
-  if(subInp) subInp.value=s;
-}
-
-function setEditPay(v,el){
-  editPay=v;
-  document.querySelectorAll(".pay-btn").forEach(b=>b.classList.remove("active"));
-  el.classList.add("active");
-}
-
-function closeModal(){
-  document.getElementById("modal-ov").classList.remove("open");
-  EDIT_ID=null;
-}
-
-function saveEdit(){
-  const amount=parseFloat(document.getElementById("e-amount")?.value);
-  const desc=(document.getElementById("e-desc")?.value||"").trim();
-  const cat=document.getElementById("e-cat")?.value||editCat;
-  const sub=(document.getElementById("e-sub")?.value||"").trim();
-  const date=document.getElementById("e-date")?.value;
-  const time=document.getElementById("e-time")?.value;
-  const note=(document.getElementById("e-note")?.value||"").trim();
-
-  if(!amount||amount<=0||!desc){
-    showMsg("edit-form-err","⚠️ Preencha valor e descrição","err");
-    return;
-  }
-  const idx=TXS.findIndex(t=>t.id===EDIT_ID);
-  if(idx<0) return;
-  TXS[idx]={
-    ...TXS[idx],
-    type:editType,
-    amount,
-    description:desc,
-    category:cat,
-    subcategory:sub,
-    datetime:(date||"")+"T"+(time||""),
-    payment:editPay,
-    notes:note,
-    edited:true
-  };
-  saveTX(TXS[idx]);
-  showMsg("edit-msg","✅ Lançamento atualizado!","ok");
-  setTimeout(()=>{ closeModal(); updateUI(); },800);
-}
-
-function deleteFromModal(){
-  const w=document.getElementById("confirm-del-wrap");
-  if(!w) return;
-  if(w.innerHTML){w.innerHTML="";return;}
-  w.innerHTML=`<div class="confirm-box">
-    <div class="confirm-txt">Confirmar exclusão?</div>
-    <div class="confirm-row">
-      <button class="confirm-yes" onclick="confirmDelete()">Sim, excluir</button>
-      <button class="confirm-no" onclick="document.getElementById('confirm-del-wrap').innerHTML=''">Cancelar</button>
+  <div id="card-section-add" style="${showCardSection?"":"display:none;"}">
+    <label class="form-label">💳 Cartão Utilizado</label>
+    <div class="card-chips-wrap" id="card-chips-add">
+      ${allCards().map(card=>`<button class="card-chip ${fCard===card.id?"active":""}" onclick="selectAddCard('${card.id}',this)">${card.emoji} ${card.name}</button>`).join("")}
+      <button class="card-chip ${fCard===""?"active":""}" onclick="selectAddCard('',this)">❌ Nenhum</button>
     </div>
-  </div>`;
+  </div>
+  ${fType==="expense"?`
+  <div style="margin-top:13px;">
+    <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+      <input type="checkbox" id="f-is-inst" onchange="toggleInstBox()" style="width:16px;height:16px;accent-color:var(--purple);"/>
+      <span style="font-size:13px;color:var(--text2);font-weight:600;">🔄 É um gasto parcelado?</span>
+    </label>
+  </div>
+  <div id="inst-box" style="display:none;" class="installment-box">
+    <div class="installment-title">💜 Configurar Parcelamento</div>
+    <div class="inst-row">
+      <div><label class="form-label" style="margin-top:0;">Nº de Parcelas</label>
+      <input class="form-input" type="number" id="f-inst-n" min="2" max="72" value="12" placeholder="12" oninput="calcInstParcela()"/></div>
+      <div><label class="form-label" style="margin-top:0;">Valor Total</label>
+      <input class="form-input" type="number" id="f-inst-total" inputmode="decimal" placeholder="Auto" step="0.01" min="0"/>
+      </div>
+    </div>
+    <div style="margin-top:8px;font-size:12px;color:var(--purple);" id="inst-preview"></div>
+  </div>`:""}
+  <label class="form-label">Observação (opcional)</label>
+  <input class="form-input" id="f-note" placeholder="Detalhes adicionais…" value=""/>
+  <div class="user-info-row">👤 Lançado como: <strong>${WHO==="marido"?"👨 Marido":"👩 Esposa"}</strong></div>
+  <div id="form-err"></div>
+  <button class="save-btn" onclick="submitTX()">➕ Adicionar</button>`;
+
+  document.getElementById("f-amount")?.addEventListener("input", calcInstParcela);
 }
 
-function confirmDelete(){
-  deleteTXById(EDIT_ID);
-  closeModal(); updateUI();
-  if(TAB==="history") renderHistory();
+function setAddPay(v, el){
+  fPay=v; fCard="";
+  document.querySelectorAll("#add-form .pay-btn").forEach(b=>b.classList.remove("active"));
+  el.classList.add("active");
+  const cardSection=document.getElementById("card-section-add");
+  if(cardSection) cardSection.style.display=(v==="credito"||v==="debito")?"":"none";
+  // reset card selection
+  document.querySelectorAll("#card-chips-add .card-chip").forEach(b=>b.classList.remove("active"));
+  const nenhum=document.querySelector("#card-chips-add .card-chip:last-child");
+  if(nenhum) nenhum.classList.add("active");
 }
 
-// ════════════════════════════════════════════════
-// ADD FORM HELPERS (main panel)
-// ════════════════════════════════════════════════
-function buildFormHTML(o){
-  // Not used for modal anymore — kept for main add form
-  return "";
+function selectAddCard(id, el){
+  fCard=id;
+  document.querySelectorAll("#card-chips-add .card-chip").forEach(b=>b.classList.remove("active"));
+  el.classList.add("active");
 }
 
 function toggleInstBox(){
   const checked=document.getElementById("f-is-inst")?.checked;
   const box=document.getElementById("inst-box");
   if(box) box.style.display=checked?"":"none";
-  if(checked) calcInstParcela("f");
+  if(checked) calcInstParcela();
 }
 
-function calcInstParcela(prefix){
-  prefix=prefix||"f";
-  const amt=parseFloat(document.getElementById(prefix+"-amount")?.value)||0;
-  const n=parseInt(document.getElementById(prefix+"-inst-n")?.value)||1;
+function calcInstParcela(){
+  const amt=parseFloat(document.getElementById("f-amount")?.value)||0;
+  const n=parseInt(document.getElementById("f-inst-n")?.value)||1;
   const prev=document.getElementById("inst-preview");
   if(!prev) return;
   if(amt>0&&n>1) prev.textContent=`Parcela mensal: ${fmtR(amt/n)} × ${n} meses = ${fmtR(amt)} total`;
@@ -1007,12 +911,6 @@ function setType(t,el){
   renderAddForm();
 }
 
-function setPay(v,el){
-  fPay=v;
-  document.querySelectorAll(".pay-btn").forEach(b=>b.classList.remove("active"));
-  el.classList.add("active");
-}
-
 function submitTX(){
   const amount=parseFloat(document.getElementById("f-amount")?.value);
   const desc=(document.getElementById("f-desc")?.value||"").trim();
@@ -1033,8 +931,7 @@ function submitTX(){
   if(isInst&&fType==="expense"&&instN>1){
     const parcela=amount/instN;
     for(let i=0;i<instN;i++){
-      const d=new Date(baseDateObj);
-      d.setMonth(d.getMonth()+i);
+      const d=new Date(baseDateObj); d.setMonth(d.getMonth()+i);
       const dStr=d.toISOString().slice(0,10);
       const tx={
         id:"tx_"+Date.now()+"_"+Math.random().toString(36).slice(2,6)+"_"+i,
@@ -1042,7 +939,7 @@ function submitTX(){
         description:desc+" ("+(i+1)+"/"+instN+")",
         category:cat,subcategory:sub,
         datetime:dStr+"T"+time,
-        payment:fPay,notes:note,who:WHO,
+        payment:fPay,cardId:fCard,notes:note,who:WHO,
         isInstallment:true,installmentGroup:groupId,
         installmentIndex:i+1,installmentTotal:instN,
         createdAt:new Date().toISOString()
@@ -1056,7 +953,7 @@ function submitTX(){
       type:fType,amount,description:desc,
       category:cat,subcategory:sub,
       datetime:date+"T"+time,
-      payment:fPay,notes:note,who:WHO,
+      payment:fPay,cardId:fCard,notes:note,who:WHO,
       isInstallment:false,
       createdAt:new Date().toISOString()
     };
@@ -1064,76 +961,156 @@ function submitTX(){
     showMsg("add-msg",`✅ ${fType==="income"?"Receita":"Gasto"} de ${fmtR(amount)} adicionado!`,"ok");
   }
 
-  fType="expense"; fCat=catNames()[0]; fPay="pix";
+  fType="expense"; fCat=catNames()[0]; fPay="pix"; fCard="";
   renderAddForm(); updateUI();
 }
 
-// Override renderAddForm to build properly inline
-(function(){
-  const _orig = renderAddForm;
-  window.renderAddForm = function(){
-    if(!fCat||!catNames().includes(fCat)) fCat=catNames()[0];
-    const cats=allCats();
-    const subs=cats[fCat]||[];
-    const now=new Date();
-    const curDate=now.toISOString().split("T")[0];
-    const curTime=now.toTimeString().slice(0,5);
+// ════════════════════════════════════════════════
+// EDIT MODAL
+// ════════════════════════════════════════════════
+function openEdit(id){
+  EDIT_ID=id;
+  const tx=TXS.find(t=>t.id===id);
+  if(!tx) return;
+  editType=tx.type||"expense";
+  editCat=tx.category||catNames()[0];
+  editPay=tx.payment||"pix";
+  editCard=tx.cardId||"";
+  const [date,time]=(tx.datetime||"").split("T");
+  document.getElementById("modal-title").textContent="✏️ Editar Lançamento";
+  document.getElementById("modal-ov").classList.add("open");
+  renderEditModal(tx, date, time?.slice(0,5));
+}
 
-    const target=document.getElementById("add-form");
-    if(!target) return;
-    target.innerHTML=`
-    <div class="type-row">
-      <button class="type-btn ${fType==="expense"?"ae":""}" onclick="setType('expense',this)">💸 Gasto</button>
-      <button class="type-btn ${fType==="income"?"ai":""}" onclick="setType('income',this)">💰 Receita</button>
+function renderEditModal(tx, date, time){
+  const cats=allCats(); const subs=cats[editCat]||[];
+  const showCardSection=(editPay==="credito"||editPay==="debito");
+  const mb=document.getElementById("modal-body");
+  mb.innerHTML=`
+  <div id="edit-msg"></div>
+  <div class="type-row">
+    <button class="type-btn ${editType==="expense"?"ae":""}" id="edit-btn-expense" onclick="setEditType('expense')">💸 Gasto</button>
+    <button class="type-btn ${editType==="income"?"ai":""}" id="edit-btn-income" onclick="setEditType('income')">💰 Receita</button>
+  </div>
+  <label class="form-label">Valor (R$)</label>
+  <input class="form-input" type="number" inputmode="decimal" id="e-amount" placeholder="0,00" value="${tx.amount||""}" step="0.01" min="0"/>
+  <label class="form-label">Descrição</label>
+  <input class="form-input" id="e-desc" placeholder="Descrição…" value="${tx.description||""}"/>
+  <label class="form-label">Categoria</label>
+  <select class="form-input" id="e-cat" onchange="onEditCatChange()">
+    ${catNames().map(cn=>`<option value="${cn}" ${cn===editCat?"selected":""}>${cn}</option>`).join("")}
+  </select>
+  <label class="form-label">Subcategoria</label>
+  <div class="chips-wrap" id="edit-subcat-chips">
+    ${subs.map(s=>`<button class="chip ${s===(tx.subcategory||"")?"active":""}" onclick="selectEditSub('${s.replace(/'/g,"\\'")}',this)">${s}</button>`).join("")}
+  </div>
+  <input class="form-input" id="e-sub" placeholder="Ou escreva…" value="${tx.subcategory||""}" style="margin-top:8px;"/>
+  <div class="form-row">
+    <div><label class="form-label">Data</label><input class="form-input" type="date" id="e-date" value="${date||""}"/></div>
+    <div><label class="form-label">Hora</label><input class="form-input" type="time" id="e-time" value="${time||""}"/></div>
+  </div>
+  <label class="form-label">Forma de Pagamento</label>
+  <div class="pay-grid">
+    ${BASE_PAYS.map(p=>`<button class="pay-btn ${editPay===p.v?"active":""}" onclick="setEditPay('${p.v}',this)">${p.l}</button>`).join("")}
+  </div>
+  <div id="card-section-edit" style="${showCardSection?"":"display:none;"}">
+    <label class="form-label">💳 Cartão Utilizado</label>
+    <div class="card-chips-wrap" id="card-chips-edit">
+      ${allCards().map(card=>`<button class="card-chip ${editCard===card.id?"active":""}" onclick="selectEditCard('${card.id}',this)">${card.emoji} ${card.name}</button>`).join("")}
+      <button class="card-chip ${editCard===""?"active":""}" onclick="selectEditCard('',this)">❌ Nenhum</button>
     </div>
-    <label class="form-label">Valor (R$)</label>
-    <input class="form-input" type="number" inputmode="decimal" id="f-amount" placeholder="0,00" value="" step="0.01" min="0"/>
-    <label class="form-label">Descrição</label>
-    <input class="form-input" id="f-desc" placeholder="Ex: Celular Samsung, Barbearia, Mercado…" value=""/>
-    <label class="form-label">Categoria</label>
-    <select class="form-input" id="f-cat" onchange="onCatChange()">
-      ${catNames().map(cn=>`<option value="${cn}" ${cn===fCat?"selected":""}>${cn}</option>`).join("")}
-    </select>
-    <label class="form-label">Subcategoria</label>
-    <div class="chips-wrap" id="subcat-chips">
-      ${subs.map(s=>`<button class="chip" onclick="selectSub('${s.replace(/'/g,"\\'")}',this)">${s}</button>`).join("")}
-    </div>
-    <input class="form-input" id="f-sub" placeholder="Ou escreva…" value="" style="margin-top:8px;"/>
-    <div class="form-row">
-      <div><label class="form-label">Data</label><input class="form-input" type="date" id="f-date" value="${curDate}"/></div>
-      <div><label class="form-label">Hora</label><input class="form-input" type="time" id="f-time" value="${curTime}"/></div>
-    </div>
-    <label class="form-label">Forma de Pagamento</label>
-    <div class="pay-grid">
-      ${PAYS.map(p=>`<button class="pay-btn ${fPay===p.v?"active":""}" onclick="setPay('${p.v}',this)">${p.l}</button>`).join("")}
-    </div>
-    ${fType==="expense"?`
-    <div style="margin-top:13px;">
-      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
-        <input type="checkbox" id="f-is-inst" onchange="toggleInstBox()" style="width:16px;height:16px;accent-color:var(--purple);"/>
-        <span style="font-size:13px;color:var(--text2);font-weight:600;">🔄 É um gasto parcelado?</span>
-      </label>
-    </div>
-    <div id="inst-box" style="display:none;" class="installment-box">
-      <div class="installment-title">💜 Configurar Parcelamento</div>
-      <div class="inst-row">
-        <div><label class="form-label" style="margin-top:0;">Nº de Parcelas</label>
-        <input class="form-input" type="number" id="f-inst-n" min="2" max="72" value="12" placeholder="12" oninput="calcInstParcela('f')"/></div>
-        <div><label class="form-label" style="margin-top:0;">Valor Total</label>
-        <input class="form-input" type="number" id="f-inst-total" inputmode="decimal" placeholder="Auto" step="0.01" min="0"/>
-        </div>
-      </div>
-      <div style="margin-top:8px;font-size:12px;color:var(--purple);" id="inst-preview"></div>
-    </div>`:""}
-    <label class="form-label">Observação (opcional)</label>
-    <input class="form-input" id="f-note" placeholder="Detalhes adicionais…" value=""/>
-    <div class="user-info-row">👤 Lançado como: <strong>${WHO==="marido"?"👨 Marido":"👩 Esposa"}</strong></div>
-    <div id="form-err"></div>
-    <button class="save-btn" onclick="submitTX()">➕ Adicionar</button>`;
+  </div>
+  <label class="form-label">Observação (opcional)</label>
+  <input class="form-input" id="e-note" placeholder="Detalhes adicionais…" value="${tx.notes||""}"/>
+  <div class="user-info-row">👤 Lançado por: <strong>${tx.who==="marido"?"👨 Marido":"👩 Esposa"}</strong></div>
+  <div id="edit-form-err"></div>
+  <button class="save-btn" onclick="saveEdit()">✅ Salvar Alterações</button>
+  <button class="cancel-btn" onclick="closeModal()">Cancelar</button>
+  <button class="delete-btn" onclick="deleteFromModal()">🗑️ Excluir Lançamento</button>
+  <div id="confirm-del-wrap"></div>`;
+}
 
-    document.getElementById("f-amount")?.addEventListener("input", ()=>calcInstParcela("f"));
-  };
-})();
+function setEditType(t){
+  editType=t;
+  document.getElementById("edit-btn-expense")?.classList.toggle("ae",t==="expense");
+  document.getElementById("edit-btn-income")?.classList.toggle("ai",t==="income");
+  document.getElementById("edit-btn-expense")?.classList.toggle("ai",false);
+  document.getElementById("edit-btn-income")?.classList.toggle("ae",false);
+}
+
+function onEditCatChange(){
+  editCat=document.getElementById("e-cat")?.value;
+  const subs=(allCats()[editCat]||[]);
+  const chipsEl=document.getElementById("edit-subcat-chips");
+  if(chipsEl) chipsEl.innerHTML=subs.map(s=>`<button class="chip" onclick="selectEditSub('${s.replace(/'/g,"\\'")}',this)">${s}</button>`).join("");
+  const subInp=document.getElementById("e-sub");
+  if(subInp) subInp.value="";
+}
+
+function selectEditSub(s,el){
+  document.querySelectorAll("#edit-subcat-chips .chip").forEach(c=>c.classList.remove("active"));
+  el.classList.add("active");
+  const subInp=document.getElementById("e-sub");
+  if(subInp) subInp.value=s;
+}
+
+function setEditPay(v,el){
+  editPay=v; editCard="";
+  document.querySelectorAll("#modal-body .pay-btn").forEach(b=>b.classList.remove("active"));
+  el.classList.add("active");
+  const cardSection=document.getElementById("card-section-edit");
+  if(cardSection) cardSection.style.display=(v==="credito"||v==="debito")?"":"none";
+  document.querySelectorAll("#card-chips-edit .card-chip").forEach(b=>b.classList.remove("active"));
+  const nenhum=document.querySelector("#card-chips-edit .card-chip:last-child");
+  if(nenhum) nenhum.classList.add("active");
+}
+
+function selectEditCard(id,el){
+  editCard=id;
+  document.querySelectorAll("#card-chips-edit .card-chip").forEach(b=>b.classList.remove("active"));
+  el.classList.add("active");
+}
+
+function closeModal(){
+  document.getElementById("modal-ov").classList.remove("open");
+  EDIT_ID=null;
+}
+
+function saveEdit(){
+  const amount=parseFloat(document.getElementById("e-amount")?.value);
+  const desc=(document.getElementById("e-desc")?.value||"").trim();
+  const cat=document.getElementById("e-cat")?.value||editCat;
+  const sub=(document.getElementById("e-sub")?.value||"").trim();
+  const date=document.getElementById("e-date")?.value;
+  const time=document.getElementById("e-time")?.value;
+  const note=(document.getElementById("e-note")?.value||"").trim();
+  if(!amount||amount<=0||!desc){ showMsg("edit-form-err","⚠️ Preencha valor e descrição","err"); return; }
+  const idx=TXS.findIndex(t=>t.id===EDIT_ID);
+  if(idx<0) return;
+  TXS[idx]={...TXS[idx],type:editType,amount,description:desc,category:cat,subcategory:sub,datetime:(date||"")+"T"+(time||""),payment:editPay,cardId:editCard,notes:note,edited:true};
+  saveTX(TXS[idx]);
+  showMsg("edit-msg","✅ Lançamento atualizado!","ok");
+  setTimeout(()=>{ closeModal(); updateUI(); },800);
+}
+
+function deleteFromModal(){
+  const w=document.getElementById("confirm-del-wrap");
+  if(!w) return;
+  if(w.innerHTML){w.innerHTML="";return;}
+  w.innerHTML=`<div class="confirm-box">
+    <div class="confirm-txt">Confirmar exclusão?</div>
+    <div class="confirm-row">
+      <button class="confirm-yes" onclick="confirmDelete()">Sim, excluir</button>
+      <button class="confirm-no" onclick="document.getElementById('confirm-del-wrap').innerHTML=''">Cancelar</button>
+    </div>
+  </div>`;
+}
+
+function confirmDelete(){
+  deleteTXById(EDIT_ID);
+  closeModal(); updateUI();
+  if(TAB==="history") renderHistory();
+}
 
 // ════════════════════════════════════════════════
 // HISTORY
@@ -1151,6 +1128,8 @@ function renderHistory(){
     <button class="flt-btn ${HIST_FILTER==="expense"?"active":""}" onclick="setFlt('expense')">💸 Gastos</button>
     <button class="flt-btn ${HIST_FILTER==="income"?"active":""}" onclick="setFlt('income')">💰 Receitas</button>
     <button class="flt-btn ${HIST_FILTER==="installment"?"active":""}" onclick="setFlt('installment')">🔄 Parcelados</button>
+    <button class="flt-btn ${HIST_FILTER==="credito"?"active":""}" onclick="setFlt('credito')">💳 Crédito</button>
+    <button class="flt-btn ${HIST_FILTER==="debito"?"active":""}" onclick="setFlt('debito')">💳 Débito</button>
     ${catNames().map(cn=>`<button class="flt-btn ${HIST_FILTER===cn?"active":""}" onclick="setFlt('${cn.replace(/'/g,"\\'")}') ">${cn}</button>`).join("")}
   </div>
   <div id="tx-list"></div>`;
@@ -1159,6 +1138,12 @@ function renderHistory(){
 
 function setFlt(f){ HIST_FILTER=f; renderHistory(); }
 
+function getCardLabel(cardId){
+  if(!cardId) return null;
+  const card=allCards().find(c=>c.id===cardId);
+  return card?`${card.emoji} ${card.name}`:null;
+}
+
 function applyHistFilter(mTXS){
   mTXS=mTXS||txsForMonth(CUR_MONTH,CUR_YEAR);
   const q=(document.getElementById("hist-search")?.value||"").toLowerCase();
@@ -1166,6 +1151,8 @@ function applyHistFilter(mTXS){
   if(HIST_FILTER==="expense") list=list.filter(t=>t.type==="expense");
   else if(HIST_FILTER==="income") list=list.filter(t=>t.type==="income");
   else if(HIST_FILTER==="installment") list=list.filter(t=>t.isInstallment);
+  else if(HIST_FILTER==="credito") list=list.filter(t=>t.payment==="credito");
+  else if(HIST_FILTER==="debito") list=list.filter(t=>t.payment==="debito");
   else if(HIST_FILTER!=="all") list=list.filter(t=>t.category===HIST_FILTER);
   if(q) list=list.filter(t=>(t.description||"").toLowerCase().includes(q)||(t.category||"").toLowerCase().includes(q)||(t.subcategory||"").toLowerCase().includes(q));
   const el=document.getElementById("tx-list");
@@ -1174,6 +1161,8 @@ function applyHistFilter(mTXS){
   el.innerHTML=list.map(t=>{
     const dt=new Date(t.datetime);
     const ds=dt.toLocaleDateString("pt-BR",{day:"2-digit",month:"short"})+" "+dt.toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"});
+    const payLabel=BASE_PAYS.find(p=>p.v===t.payment)?.l||t.payment||"";
+    const cardLabel=getCardLabel(t.cardId);
     return `<div class="tx-card ${t.isInstallment?"is-installment":""}" onclick="openEdit('${t.id}')">
       <div class="tx-top">
         <div class="tx-left">
@@ -1181,6 +1170,7 @@ function applyHistFilter(mTXS){
             <span class="tx-cat">${t.category||"—"}</span>
             ${t.subcategory?`<span class="tx-subcat">${t.subcategory}</span>`:""}
             ${t.isInstallment?`<span class="tx-inst-badge">🔄 ${t.installmentIndex||""}/${t.installmentTotal||""}</span>`:""}
+            ${cardLabel?`<span class="tx-card-badge">${cardLabel}</span>`:""}
           </div>
           <span class="tx-desc">${t.description||"—"}</span>
         </div>
@@ -1188,7 +1178,7 @@ function applyHistFilter(mTXS){
       </div>
       <div class="tx-meta">
         <span>${ds}</span>
-        <span class="tx-pay">${PAYS.find(p=>p.v===t.payment)?.l||t.payment||""}</span>
+        <span class="tx-pay">${payLabel}</span>
         <span class="tx-badge tx-badge-${t.who}">${t.who==="marido"?"👨":"👩"} ${t.who||""}</span>
         ${t.edited?`<span class="tx-edited">✏️ editado</span>`:""}
       </div>
@@ -1208,28 +1198,15 @@ function renderParcelas(){
     if(!groups[g]) groups[g]={txs:[],name:t.description?.replace(/ \(\d+\/\d+\)$/,""),total:t.installmentTotal||1,amount:t.amount,category:t.category};
     groups[g].txs.push(t);
   });
-
-  if(!Object.keys(groups).length){
-    c.innerHTML=`<div class="empty-state">🔄 Nenhum parcelamento ativo.<br><br>Ao adicionar um gasto, marque a opção "É um gasto parcelado?" para criar parcelas automáticas.</div>`;
-    return;
-  }
-
+  if(!Object.keys(groups).length){ c.innerHTML=`<div class="empty-state">🔄 Nenhum parcelamento ativo.<br><br>Ao adicionar um gasto, marque a opção "É um gasto parcelado?" para criar parcelas automáticas.</div>`; return; }
   const now=new Date();
   const rows=Object.entries(groups).map(([gid,g])=>{
     const paid=g.txs.filter(t=>{ const d=new Date(t.datetime); return d<=now; }).length;
     const remaining=g.total-paid;
-    const totalVal=g.amount*g.total;
-    const remainingVal=g.amount*remaining;
-    return {gid,g,paid,remaining,totalVal,remainingVal};
+    return {gid,g,paid,remaining,totalVal:g.amount*g.total,remainingVal:g.amount*remaining};
   }).filter(r=>r.remaining>0).sort((a,b)=>b.remainingVal-a.remainingVal);
-
-  if(!rows.length){
-    c.innerHTML=`<div class="empty-state">✅ Todos os parcelamentos foram quitados!</div>`;
-    return;
-  }
-
+  if(!rows.length){ c.innerHTML=`<div class="empty-state">✅ Todos os parcelamentos foram quitados!</div>`; return; }
   const totalComp=rows.reduce((s,r)=>s+r.remainingVal,0);
-
   c.innerHTML=`
   <div class="sum-card" style="margin-bottom:14px;">
     <div class="sum-title">💜 Total Comprometido em Parcelas</div>
@@ -1270,17 +1247,35 @@ function renderSummary(){
   const catTotals={};
   mTXS.filter(t=>t.type==="expense").forEach(t=>catTotals[t.category]=(catTotals[t.category]||0)+t.amount);
   const sortedCats=Object.entries(catTotals).sort((a,b)=>b[1]-a[1]);
+
+  // Card totals
+  const cardTotals={};
+  mTXS.filter(t=>t.type==="expense"&&t.cardId).forEach(t=>{
+    if(!cardTotals[t.cardId]) cardTotals[t.cardId]={total:0,count:0};
+    cardTotals[t.cardId].total+=t.amount;
+    cardTotals[t.cardId].count++;
+  });
+  const sortedCards=Object.entries(cardTotals).sort((a,b)=>b[1].total-a[1].total);
+
+  // Payment method totals
+  const payTotals={};
+  mTXS.filter(t=>t.type==="expense").forEach(t=>{
+    payTotals[t.payment]=(payTotals[t.payment]||0)+t.amount;
+  });
+
   const mariExp=mTXS.filter(t=>t.who==="marido"&&t.type==="expense").reduce((s,t)=>s+t.amount,0);
   const espExp=mTXS.filter(t=>t.who==="esposa"&&t.type==="expense").reduce((s,t)=>s+t.amount,0);
   const mariN=mTXS.filter(t=>t.who==="marido"&&t.type==="expense").length;
   const espN=mTXS.filter(t=>t.who==="esposa"&&t.type==="expense").length;
-  const insights=genInsights(mTXS,pTXS,inc,exp,pExp,catTotals);
+  const insights=genInsights(mTXS,pTXS,inc,exp,pExp,catTotals,cardTotals);
   const c=document.getElementById("summary-content");
+
   c.innerHTML=`
   <div class="sum-card">
     <div class="sum-title">📅 ${MONTHS[CUR_MONTH]} ${CUR_YEAR}</div>
     ${[["Receita total",fmtR(inc),"var(--green)"],["Gasto total",fmtR(exp),"var(--red)"],["Saldo",fmtR(bal),bal>=0?"var(--green)":"var(--red)"],["Economia",savePct+"% da renda",savePct>=20?"var(--green)":"var(--amber)"],["vs Mês anterior",pExp>0?(exp>pExp?"▲ +"+(Math.round((exp-pExp)/pExp*100))+"%":"▼ −"+(Math.round((pExp-exp)/pExp*100))+"%"):"—",exp>pExp?"var(--red)":"var(--green)"],["Total de lançamentos",mTXS.length,"var(--text2)"]].map(([k,v,col])=>`<div class="sum-row"><span class="sum-name">${k}</span><span class="sum-val" style="color:${col}">${v}</span></div>`).join("")}
   </div>
+
   ${score!==null?`
   <div class="score-card">
     <div class="sum-title" style="text-align:center;">🏆 Score Financeiro</div>
@@ -1289,11 +1284,43 @@ function renderSummary(){
     <div class="score-bar-bg"><div class="score-bar-fill" style="width:${score}%;background:${score>=70?"var(--green)":score>=40?"var(--amber)":"var(--red)"}"></div></div>
     <div style="font-size:11px;color:var(--text3);">0 — Crítico &nbsp; 50 — Estável &nbsp; 100 — Excelente</div>
   </div>`:""}
+
   <div class="sum-title" style="margin-bottom:10px;">👫 Por Pessoa</div>
   <div class="person-grid">
     <div class="person-card"><div class="person-emoji">👨</div><div class="person-name marido">Marido</div><div class="person-amount">${fmtR(mariExp)}</div><div class="person-count">${mariN} lançamentos</div></div>
     <div class="person-card"><div class="person-emoji">👩</div><div class="person-name esposa">Esposa</div><div class="person-amount">${fmtR(espExp)}</div><div class="person-count">${espN} lançamentos</div></div>
   </div>
+
+  ${sortedCards.length?`
+  <div class="card-sum-card">
+    <div class="card-sum-title">💳 Gastos por Cartão</div>
+    ${sortedCards.map(([cardId,data])=>{
+      const card=allCards().find(c=>c.id===cardId)||{emoji:"💳",name:cardId};
+      const pct=exp>0?Math.round(data.total/exp*100):0;
+      return `<div class="card-item">
+        <div class="card-item-left">
+          <div class="card-item-name">${card.emoji} ${card.name}</div>
+          <div class="card-item-count">${data.count} transação(ões) • ${pct}% dos gastos</div>
+          <div class="cat-bar-bg" style="margin-top:5px;"><div class="cat-bar-fill-amber" style="width:${pct}%"></div></div>
+        </div>
+        <div class="card-item-val">${fmtR(data.total)}</div>
+      </div>`;
+    }).join("")}
+  </div>`:""}
+
+  ${Object.keys(payTotals).length?`
+  <div class="sum-card">
+    <div class="sum-title">💳 Gastos por Forma de Pagamento</div>
+    ${Object.entries(payTotals).sort((a,b)=>b[1]-a[1]).map(([pay,val])=>{
+      const payLabel=BASE_PAYS.find(p=>p.v===pay)?.l||pay;
+      const pct=exp>0?Math.round(val/exp*100):0;
+      return `<div class="cat-row">
+        <div class="cat-top"><span class="cat-name">${payLabel}</span><div style="display:flex;gap:8px;align-items:center;"><span class="cat-pct">${pct}%</span><span class="cat-val">${fmtR(val)}</span></div></div>
+        <div class="cat-bar-bg"><div class="cat-bar-fill" style="width:${pct}%"></div></div>
+      </div>`;
+    }).join("")}
+  </div>`:""}
+
   <div class="sum-card">
     <div class="sum-title">📊 Top Categorias</div>
     ${sortedCats.slice(0,6).map(([cat,val])=>`
@@ -1303,6 +1330,7 @@ function renderSummary(){
     </div>`).join("")}
     ${!sortedCats.length?`<div style="color:var(--text3);font-size:13px;">Nenhum gasto registrado.</div>`:""}
   </div>
+
   ${insights.length?`<div class="sum-title" style="margin-bottom:10px;">💡 Insights</div>${insights.map(i=>`<div class="insight-card"><span class="insight-icon">${i.icon}</span><div class="insight-text">${i.text}</div></div>`).join("")}`:""}`;
 }
 
@@ -1314,7 +1342,7 @@ function calcScore(inc,exp){
   return Math.max(0,Math.min(100,s));
 }
 
-function genInsights(mTXS,pTXS,inc,exp,pExp,catTotals){
+function genInsights(mTXS,pTXS,inc,exp,pExp,catTotals,cardTotals){
   const ins=[];
   if(pExp>0){
     const d=exp-pExp, p=Math.abs(Math.round(d/pExp*100));
@@ -1323,6 +1351,13 @@ function genInsights(mTXS,pTXS,inc,exp,pExp,catTotals){
   }
   const top=Object.entries(catTotals).sort((a,b)=>b[1]-a[1])[0];
   if(top) ins.push({icon:"🏷️",text:`Maior categoria: <strong>${top[0]}</strong> com ${fmtR(top[1])} (${inc>0?Math.round(top[1]/inc*100):0}% da renda).`});
+  if(cardTotals&&Object.keys(cardTotals).length){
+    const topCard=Object.entries(cardTotals).sort((a,b)=>b[1].total-a[1].total)[0];
+    if(topCard){
+      const cardInfo=allCards().find(c=>c.id===topCard[0])||{emoji:"💳",name:topCard[0]};
+      ins.push({icon:"💳",text:`Cartão mais usado: <strong>${cardInfo.emoji} ${cardInfo.name}</strong> com ${fmtR(topCard[1].total)} (${topCard[1].count} transações).`});
+    }
+  }
   if(inc>0&&exp/inc<0.5) ins.push({icon:"🎉",text:`Excelente! Você poupou <strong>${Math.round((1-exp/inc)*100)}%</strong> da renda este mês.`});
   if(inc>0&&exp/inc>0.9) ins.push({icon:"🚨",text:`Atenção: <strong>${Math.round(exp/inc*100)}%</strong> da renda foi gasta. Tente reduzir gastos variáveis.`});
   const instExp=mTXS.filter(t=>t.isInstallment&&t.type==="expense").reduce((s,t)=>s+t.amount,0);
@@ -1342,69 +1377,28 @@ function renderSettings(){
   const radius=RADIUS_DATA.find(r=>r.id===APPEARANCE.radiusId)||RADIUS_DATA[2];
   const spacing=SPACING_DATA.find(s=>s.id===APPEARANCE.spacingId)||SPACING_DATA[1];
   const cc=APPEARANCE.customColors;
-
   const colorMap={"--bg":theme.bg,"--surface":theme.surface,"--surface2":theme.surface2,"--border":theme.border,"--border2":theme.border2,"--text":theme.text,"--text2":theme.text2,"--text3":theme.text3,"--blue":theme.accent,"--green":theme.green,"--red":theme.red,"--amber":theme.amber,"--purple":theme.purple,"--pink":theme.pink};
   const getColor=(k)=>cc[k]||colorMap[k]||"#888888";
 
-  const colorSections = [
-    {
-      title:"🌑 Fundos",desc:"Cores de fundo e superfícies",
-      items:[
-        {key:"--bg",      label:"Fundo Principal",  sub:"Cor de fundo geral da tela"},
-        {key:"--surface", label:"Cards / Painéis",  sub:"Fundo de cards e formulários"},
-        {key:"--surface2",label:"Cards Secundários",sub:"Fundos aninhados e inputs"},
-        {key:"--border",  label:"Bordas",           sub:"Linhas divisórias sutis"},
-        {key:"--border2", label:"Bordas Ativas",    sub:"Bordas de hover e foco"},
-      ]
-    },
-    {
-      title:"✍️ Textos",desc:"Cores de tipografia",
-      items:[
-        {key:"--text",  label:"Texto Principal",   sub:"Cor das letras principais"},
-        {key:"--text2", label:"Texto Secundário",  sub:"Subtítulos e rótulos"},
-        {key:"--text3", label:"Texto Terciário",   sub:"Placeholders e dicas"},
-      ]
-    },
-    {
-      title:"🎨 Destaques",desc:"Cores de ação e semântica",
-      items:[
-        {key:"--blue",   label:"Cor de Destaque",  sub:"Botões, links, ativo"},
-        {key:"--green",  label:"Cor Positiva",     sub:"Receitas e valores positivos"},
-        {key:"--red",    label:"Cor Negativa",     sub:"Gastos e alertas"},
-        {key:"--amber",  label:"Âmbar",            sub:"Avisos e alertas médios"},
-        {key:"--purple", label:"Parcelas",         sub:"Cards e badges de parcelamentos"},
-        {key:"--pink",   label:"Destaque 2",       sub:"Pessoa 2 (Esposa)"},
-      ]
-    }
+  const colorSections=[
+    {title:"🌑 Fundos",desc:"Cores de fundo e superfícies",items:[{key:"--bg",label:"Fundo Principal",sub:"Cor de fundo geral"},{key:"--surface",label:"Cards / Painéis",sub:"Fundo de cards"},{key:"--surface2",label:"Cards Secundários",sub:"Inputs e aninhados"},{key:"--border",label:"Bordas",sub:"Linhas divisórias"},{key:"--border2",label:"Bordas Ativas",sub:"Hover e foco"}]},
+    {title:"✍️ Textos",desc:"Cores de tipografia",items:[{key:"--text",label:"Texto Principal",sub:"Letras principais"},{key:"--text2",label:"Texto Secundário",sub:"Subtítulos"},{key:"--text3",label:"Texto Terciário",sub:"Placeholders"}]},
+    {title:"🎨 Destaques",desc:"Cores de ação",items:[{key:"--blue",label:"Cor de Destaque",sub:"Botões e links"},{key:"--green",label:"Cor Positiva",sub:"Receitas"},{key:"--red",label:"Cor Negativa",sub:"Gastos"},{key:"--amber",label:"Âmbar",sub:"Avisos"},{key:"--purple",label:"Parcelas",sub:"Cards de parcelas"},{key:"--pink",label:"Destaque 2",sub:"Esposa"}]},
   ];
 
   c.innerHTML=`
   <div class="stab-row">
     <button class="stab-btn ${stab==="temas"?"active":""}"      data-tab="temas"      onclick="switchSettingsTab('temas')">🎨 Temas</button>
     <button class="stab-btn ${stab==="cores"?"active":""}"      data-tab="cores"      onclick="switchSettingsTab('cores')">🖌️ Cores</button>
-    <button class="stab-btn ${stab==="tipografia"?"active":""}" data-tab="tipografia" onclick="switchSettingsTab('tipografia')">🔤 Tipografia</button>
-    <button class="stab-btn ${stab==="layout"?"active":""}"     data-tab="layout"     onclick="switchSettingsTab('layout')">📐 Layout</button>
+    <button class="stab-btn ${stab==="tipografia"?"active":""}" data-tab="tipografia" onclick="switchSettingsTab('tipografia')">🔤 Fonte</button>
     <button class="stab-btn ${stab==="categorias"?"active":""}" data-tab="categorias" onclick="switchSettingsTab('categorias')">📂 Categorias</button>
+    <button class="stab-btn ${stab==="cartoes"?"active":""}"    data-tab="cartoes"    onclick="switchSettingsTab('cartoes')">💳 Cartões</button>
     <button class="stab-btn ${stab==="sobre"?"active":""}"      data-tab="sobre"      onclick="switchSettingsTab('sobre')">ℹ️ Sobre</button>
   </div>
 
   <div class="stab-panel ${stab==="temas"?"active":""}" data-panel="temas">
-    <div class="preview-wrapper">
-      <div class="preview-title">👁️ Preview do Tema Atual</div>
-      <div class="preview-mini-card">
-        <div class="preview-mini-title">Finanças do Lar</div>
-        <div class="preview-mini-sub">Exemplo de como ficará o app</div>
-        <div class="preview-mini-row">
-          <span class="preview-mini-badge preview-mini-green">+R$ 3.500,00</span>
-          <span class="preview-mini-badge preview-mini-red">-R$ 2.100,00</span>
-          <span class="preview-mini-badge preview-mini-blue">Saldo</span>
-        </div>
-        <button class="preview-mini-btn">➕ Adicionar Lançamento</button>
-      </div>
-    </div>
     <div class="settings-section">
       <div class="settings-section-title">🌈 Temas Prontos</div>
-      <div class="settings-section-desc">Escolha um tema base. Depois, personalize as cores na aba "Cores".</div>
       <div class="theme-grid">
         ${THEMES_DATA.map(t=>`
         <div class="theme-card ${APPEARANCE.themeId===t.id?"selected":""}" onclick="setTheme('${t.id}')">
@@ -1425,12 +1419,11 @@ function renderSettings(){
   <div class="stab-panel ${stab==="cores"?"active":""}" data-panel="cores">
     <div class="settings-section">
       <div class="settings-section-title">⚡ Paletas Rápidas</div>
-      <div class="settings-section-desc">Aplique uma paleta de cores de destaque com um toque.</div>
       <div class="palette-row">
         ${COLOR_PALETTES.map(p=>`
         <div class="palette-chip" onclick="applyColorPalette('${p.id}')">
           <div class="palette-chip-dots">
-            <div class="palette-dot" style="background:${p.colors.accent||p.colors.blue}"></div>
+            <div class="palette-dot" style="background:${p.colors.accent}"></div>
             <div class="palette-dot" style="background:${p.colors.green}"></div>
             <div class="palette-dot" style="background:${p.colors.red}"></div>
           </div>
@@ -1439,34 +1432,26 @@ function renderSettings(){
       </div>
     </div>
     <div class="settings-section">
-      <div class="settings-section-title">🎛️ Personalização Fina de Cores</div>
-      <div class="settings-section-desc">Clique na caixinha colorida ou no color picker para mudar cada cor individualmente.</div>
+      <div class="settings-section-title">🎛️ Ajuste Fino</div>
       ${colorSections.map(sec=>`
       <div class="color-section">
-        <div class="color-section-header">
-          <h4>${sec.title}</h4>
-          <p>${sec.desc}</p>
-        </div>
+        <div class="color-section-header"><h4>${sec.title}</h4><p>${sec.desc}</p></div>
         ${sec.items.map(item=>`
         <div class="color-picker-row">
-          <div>
-            <div class="cpick-label">${item.label}</div>
-            <div class="cpick-sub">${item.sub}</div>
-          </div>
+          <div><div class="cpick-label">${item.label}</div><div class="cpick-sub">${item.sub}</div></div>
           <div class="cpick-right">
             <div class="cpick-preview" data-cpick="${item.key}" style="background:${getColor(item.key)};" onclick="this.nextElementSibling.click()"></div>
             <input type="color" value="${getColor(item.key)}" oninput="updateCustomColor('${item.key}',this.value)" onchange="updateCustomColor('${item.key}',this.value)"/>
           </div>
         </div>`).join("")}
       </div>`).join("")}
-      <button class="reset-btn" onclick="if(confirm('Resetar cores personalizadas para o tema atual?')){APPEARANCE.customColors={};saveAppearance();applyAppearance();renderSettings();}">↩️ Resetar cores personalizadas</button>
+      <button class="reset-btn" onclick="if(confirm('Resetar cores?')){APPEARANCE.customColors={};saveAppearance();applyAppearance();renderSettings();}">↩️ Resetar cores</button>
     </div>
   </div>
 
   <div class="stab-panel ${stab==="tipografia"?"active":""}" data-panel="tipografia">
     <div class="settings-section">
       <div class="settings-section-title">🔤 Família Tipográfica</div>
-      <div class="settings-section-desc">Escolha a fonte que melhor combina com seu estilo.</div>
       <div class="font-grid">
         ${FONTS_DATA.map(f=>`
         <div class="font-card ${APPEARANCE.fontId===f.id?"selected":""}" onclick="setFont('${f.id}')">
@@ -1478,7 +1463,6 @@ function renderSettings(){
     </div>
     <div class="settings-section">
       <div class="settings-section-title">📏 Tamanho do Texto</div>
-      <div class="settings-section-desc">Ajuste o tamanho base da tipografia.</div>
       <div class="size-row">
         ${SIZES_DATA.map(s=>`
         <div class="size-btn ${APPEARANCE.sizeId===s.id?"selected":""}" onclick="setSize('${s.id}')">
@@ -1487,78 +1471,60 @@ function renderSettings(){
         </div>`).join("")}
       </div>
     </div>
-    <div class="settings-section">
-      <div class="settings-section-title">✍️ Preview da Tipografia</div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;">
-        <div style="font-family:var(--fh);font-size:22px;font-weight:800;color:var(--text);margin-bottom:6px;">Finanças do Lar</div>
-        <div style="font-family:var(--fb);font-size:var(--fs-base);color:var(--text2);margin-bottom:10px;">Controle inteligente para o casal ♥</div>
-        <div style="font-family:var(--fb);font-size:calc(var(--fs-base) - 2px);color:var(--text3);">Texto de apoio e detalhes secundários aparecem assim.</div>
-        <div style="font-family:var(--fh);font-size:26px;font-weight:800;color:var(--green);margin-top:10px;">R$ 3.500,00</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="stab-panel ${stab==="layout"?"active":""}" data-panel="layout">
-    <div class="settings-section">
-      <div class="settings-section-title">⭕ Arredondamento dos Cantos</div>
-      <div class="settings-section-desc">Define o raio das bordas de cards e botões.</div>
-      <div class="radius-row">
-        ${RADIUS_DATA.map(r=>`
-        <div class="radius-btn ${APPEARANCE.radiusId===r.id?"selected":""}" style="border-radius:${r.btn};border:2px solid var(--border);" onclick="setRadius('${r.id}')">
-          <div class="radius-preview" style="border-radius:${r.card};"></div>
-          <div class="radius-label">${r.label}</div>
-        </div>`).join("")}
-      </div>
-    </div>
-    <div class="settings-section">
-      <div class="settings-section-title">↔️ Espaçamento</div>
-      <div class="settings-section-desc">Controla o padding e margens do layout.</div>
-      <div class="spacing-row">
-        ${SPACING_DATA.map(s=>`
-        <div class="spacing-btn ${APPEARANCE.spacingId===s.id?"selected":""}" onclick="setSpacing('${s.id}')">
-          <span style="font-size:13px;font-weight:700;color:var(--text);display:block;margin-bottom:3px;">${s.label}</span>
-          <span style="font-size:10px;color:var(--text3);">×${s.mult}</span>
-        </div>`).join("")}
-      </div>
-    </div>
-    <div class="settings-section">
-      <div class="settings-section-title">🖼️ Preview do Layout</div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:8px;">
-        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px;font-size:13px;color:var(--text);">Input de exemplo</div>
-        <div style="display:flex;gap:8px;">
-          <div style="flex:1;background:var(--green-bg);border:1px solid var(--green);border-radius:var(--rs);padding:8px;text-align:center;font-size:12px;color:var(--green);font-weight:700;">💰 Receita</div>
-          <div style="flex:1;background:var(--red-bg);border:1px solid var(--red);border-radius:var(--rs);padding:8px;text-align:center;font-size:12px;color:var(--red);font-weight:700;">💸 Gasto</div>
-        </div>
-        <div style="background:linear-gradient(135deg,var(--blue),#2d7dd6);border-radius:var(--r);padding:11px;color:#fff;text-align:center;font-size:13px;font-weight:700;">➕ Botão de Ação</div>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <button class="reset-btn" onclick="if(confirm('Restaurar toda a aparência para o padrão?'))resetAllAppearance()">🔄 Restaurar tudo ao padrão</button>
+    <button class="reset-btn" onclick="if(confirm('Restaurar tudo ao padrão?'))resetAllAppearance()">🔄 Restaurar padrão</button>
   </div>
 
   <div class="stab-panel ${stab==="categorias"?"active":""}" data-panel="categorias">
     <div class="settings-section">
       <div class="settings-section-title">📂 Categorias Padrão</div>
-      <div class="settings-section-desc">Estas categorias fazem parte do app e não podem ser removidas.</div>
       ${Object.keys(DEFAULT_CATS).map(cat=>`
-      <div class="cat-item">
-        <span class="cat-item-name">${cat}</span>
-        <span class="cat-item-default">Padrão</span>
-      </div>`).join("")}
+      <div class="cat-item"><span class="cat-item-name">${cat}</span><span class="cat-item-default">Padrão</span></div>`).join("")}
     </div>
     <div class="settings-section">
       <div class="settings-section-title">✨ Minhas Categorias</div>
-      <div class="settings-section-desc">Adicione categorias personalizadas para o seu uso.</div>
       ${Object.keys(USER_CATS).length?Object.keys(USER_CATS).map(cat=>`
       <div class="cat-item">
         <span class="cat-item-name">${cat}</span>
         <button class="cat-del-btn" onclick="deleteCat('${cat.replace(/'/g,"\\'")}')">Remover</button>
-      </div>`).join(""):`<div style="color:var(--text3);font-size:13px;margin-bottom:12px;padding:10px;background:var(--surface);border-radius:var(--rs);border:1px solid var(--border);">Nenhuma categoria personalizada ainda.</div>`}
+      </div>`).join(""):`<div style="color:var(--text3);font-size:13px;margin-bottom:12px;">Nenhuma categoria personalizada ainda.</div>`}
       <div class="add-cat-row">
-        <input class="add-cat-inp" id="new-cat-inp" placeholder="Ex: 🏋️ Academia, 🐱 Pet…" onkeydown="if(event.key==='Enter')addCat()"/>
+        <input class="add-cat-inp" id="new-cat-inp" placeholder="Ex: 🏋️ Academia…" onkeydown="if(event.key==='Enter')addCat()"/>
         <button class="add-cat-btn" onclick="addCat()">+ Criar</button>
       </div>
       <div id="cat-msg" style="margin-top:8px;"></div>
+    </div>
+  </div>
+
+  <!-- CARTÕES TAB -->
+  <div class="stab-panel ${stab==="cartoes"?"active":""}" data-panel="cartoes">
+    <div class="settings-section">
+      <div class="settings-section-title">💳 Cartões Pré-definidos</div>
+      <div class="settings-section-desc">Estes cartões estão disponíveis por padrão ao registrar gastos.</div>
+      ${DEFAULT_CARDS.map(card=>`
+      <div class="cat-item">
+        <span class="cat-item-name">${card.emoji} ${card.name}</span>
+        <span class="cat-item-default">Padrão</span>
+      </div>`).join("")}
+    </div>
+    <div class="settings-section">
+      <div class="settings-section-title">✨ Meus Cartões</div>
+      <div class="settings-section-desc">Adicione cartões personalizados (ex: cartão de loja, cartão empresarial).</div>
+      ${USER_CARDS.length?USER_CARDS.map((card,i)=>`
+      <div class="cat-item">
+        <span class="cat-item-name">${card.emoji} ${card.name}</span>
+        <button class="cat-del-btn" onclick="deleteUserCard(${i})">Remover</button>
+      </div>`).join(""):`<div style="color:var(--text3);font-size:13px;margin-bottom:12px;padding:10px;background:var(--surface);border-radius:var(--rs);border:1px solid var(--border);">Nenhum cartão personalizado ainda.</div>`}
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-top:8px;">
+        <div class="settings-section-title" style="margin-bottom:10px;">➕ Adicionar Cartão</div>
+        <label class="form-label" style="margin-top:0;">Emoji do Cartão</label>
+        <input class="form-input" id="new-card-emoji" placeholder="Ex: 🟣 💎 🏦" value="" style="margin-bottom:8px;"/>
+        <label class="form-label" style="margin-top:0;">Nome do Cartão</label>
+        <div class="add-cat-row" style="margin-top:6px;">
+          <input class="add-cat-inp" id="new-card-name" placeholder="Ex: Sicoob, Elo, Americanas…" onkeydown="if(event.key==='Enter')addUserCard()"/>
+          <button class="add-cat-btn" onclick="addUserCard()">+ Criar</button>
+        </div>
+      </div>
+      <div id="card-msg" style="margin-top:8px;"></div>
     </div>
   </div>
 
@@ -1569,24 +1535,35 @@ function renderSettings(){
         <div style="font-family:var(--fh);font-size:20px;font-weight:800;color:var(--text);margin-bottom:4px;">Finanças do Lar</div>
         <div style="font-size:13px;color:var(--text3);margin-bottom:16px;">Controle financeiro para o casal</div>
         <div style="display:flex;flex-direction:column;gap:8px;text-align:left;">
-          ${[
-            ["☁️","Sincronização em tempo real via Firebase"],
-            ["✅","100% gratuito"],
-            ["📊",TXS.length+" lançamento(s) salvos"],
-            ["🎨","Tema: "+theme.name+" ("+theme.sub+")"],
-            ["🔤","Fonte: "+font.name],
-            ["📏","Tamanho: "+sizeD.label+" ("+sizeD.base+")"],
-            ["⭕","Cantos: "+radius.label],
-            ["↔️","Espaçamento: "+spacing.label],
-            ["🎛️","Cores customizadas: "+Object.keys(cc).length],
-          ].map(([icon,txt])=>`<div style="display:flex;gap:10px;align-items:center;"><span style="font-size:16px;">${icon}</span><span style="font-size:13px;color:var(--text2);">${txt}</span></div>`).join("")}
+          ${[["☁️","Sincronização via Firebase"],["✅","100% gratuito"],["📊",TXS.length+" lançamento(s) salvos"],["🎨","Tema: "+theme.name],["🔤","Fonte: "+font.name],["💳","Cartões: "+(DEFAULT_CARDS.length+USER_CARDS.length)+" disponíveis"]].map(([icon,txt])=>`<div style="display:flex;gap:10px;align-items:center;"><span style="font-size:16px;">${icon}</span><span style="font-size:13px;color:var(--text2);">${txt}</span></div>`).join("")}
         </div>
       </div>
     </div>
     <div class="settings-section">
-      <button class="reset-btn" onclick="if(confirm('Isso irá APAGAR todos os dados locais. Continuar?')){localStorage.clear();location.reload();}">⚠️ Limpar todos os dados locais</button>
+      <button class="reset-btn" onclick="if(confirm('Apagar todos os dados locais?')){localStorage.clear();location.reload();}">⚠️ Limpar todos os dados locais</button>
     </div>
   </div>`;
+}
+
+function addUserCard(){
+  const nameInp=document.getElementById("new-card-name");
+  const emojiInp=document.getElementById("new-card-emoji");
+  const name=(nameInp?.value||"").trim();
+  const emoji=(emojiInp?.value||"💳").trim()||"💳";
+  if(!name){ showMsg("card-msg","⚠️ Digite o nome do cartão","err"); return; }
+  const id="custom_"+Date.now();
+  USER_CARDS.push({id, name, emoji});
+  saveUserCards();
+  if(nameInp) nameInp.value="";
+  if(emojiInp) emojiInp.value="";
+  showMsg("card-msg","✅ Cartão adicionado!","ok");
+  renderSettings();
+}
+
+function deleteUserCard(index){
+  USER_CARDS.splice(index,1);
+  saveUserCards();
+  renderSettings();
 }
 
 function addCat(){
@@ -1594,25 +1571,16 @@ function addCat(){
   const v=inp?.value.trim();
   if(!v){ showMsg("cat-msg","⚠️ Digite um nome","err"); return; }
   if(DEFAULT_CATS[v]||USER_CATS[v]){ showMsg("cat-msg","⚠️ Categoria já existe","err"); return; }
-  USER_CATS[v]=["Outros"];
-  saveUserCats();
-  inp.value="";
-  showMsg("cat-msg","✅ Categoria criada!","ok");
-  renderSettings();
+  USER_CATS[v]=["Outros"]; saveUserCats();
+  inp.value=""; showMsg("cat-msg","✅ Categoria criada!","ok"); renderSettings();
 }
 
-function deleteCat(cat){
-  delete USER_CATS[cat];
-  saveUserCats();
-  renderSettings();
-}
+function deleteCat(cat){ delete USER_CATS[cat]; saveUserCats(); renderSettings(); }
 
 // ════════════════════════════════════════════════
 // UTILS
 // ════════════════════════════════════════════════
-function fmtR(v){
-  return "R$ "+(v||0).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
-}
+function fmtR(v){ return "R$ "+(v||0).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2}); }
 
 function showMsg(id,txt,type){
   const el=document.getElementById(id);
@@ -1630,6 +1598,7 @@ window.addEventListener("DOMContentLoaded",()=>{
   loadAppearance();
   initFirebase();
   try{ USER_CATS=JSON.parse(localStorage.getItem("user_cats")||"{}"); }catch(e){ USER_CATS={}; }
+  try{ USER_CARDS=JSON.parse(localStorage.getItem("user_cards")||"[]"); }catch(e){ USER_CARDS=[]; }
   setTimeout(()=>{
     loading.style.display="none";
     const saved=localStorage.getItem("who");
